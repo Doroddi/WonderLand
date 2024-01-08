@@ -1056,7 +1056,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  speed: 6
+  moveSpeed: 6
   jumpForce: 10
 --- !u!95 &1895945654
 Animator:

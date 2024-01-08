@@ -6,15 +6,18 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    Rigidbody2D rigid;
-    SpriteRenderer sprite;
-    BoxCollider2D coll;
+    private Rigidbody2D rigid;
+    private SpriteRenderer sprite;
+    private BoxCollider2D coll;
 
-    public LayerMask groundLayer;
+    [SerializeField] private LayerMask groundLayer;
 
-    public float speed;
-    public float jumpForce;
-    float x;
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private float jumpForce;
+    private float xInput;
+
+    [Header("Facing Info")]
+    private bool facingRight = true;
 
     private void Awake()
     {
@@ -27,7 +30,7 @@ public class Player : MonoBehaviour
     {
         MovementInput();
         Jump();
-        flipX();
+        DirectionController();
     }
 
     private void FixedUpdate()
@@ -37,13 +40,13 @@ public class Player : MonoBehaviour
 
     private void MovementInput()
     {
-        x = Input.GetAxisRaw("Horizontal");
+        xInput = Input.GetAxisRaw("Horizontal");
     }
 
     private void Movement()
     {
 
-        rigid.velocity = new Vector2(x * speed, rigid.velocity.y);
+        rigid.velocity = new Vector2(xInput * moveSpeed, rigid.velocity.y);
     }
 
     private void Jump()
@@ -53,16 +56,25 @@ public class Player : MonoBehaviour
             rigid.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
-    private void flipX()
+
+    private void DirectionController()
     {
-        if(rigid.velocity.x > 0)
+        if (xInput > 0 && !facingRight)
         {
-            sprite.flipX = false;
-        }else if (rigid.velocity.x < 0)
+            Flip();
+        }
+        else if (xInput < 0 && facingRight)
         {
-            sprite.flipX = true;
+            Flip();
         }
     }
+
+    private void Flip()
+    {
+        facingRight = !facingRight;
+        transform.Rotate(0, 180, 0);
+    }
+
     private bool IsGrounded()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, groundLayer);
