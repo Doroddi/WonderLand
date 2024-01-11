@@ -1,82 +1,87 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Rendering;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private Rigidbody2D rigid;
-    private SpriteRenderer sprite;
-    private BoxCollider2D coll;
+    [Header("Movement Info")]
+    [SerializeField] public float moveSpeed = 7;
+    [SerializeField] public bool isFacingRight { get; private set; }
 
-    [SerializeField] private LayerMask groundLayer;
 
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private float jumpForce;
-    private float xInput;
+    #region Components
+    public Animator anim { get; private set; }
 
-    [Header("Facing Info")]
-    private bool facingRight = true;
+    public Rigidbody2D rb { get; private set; }
+    #endregion
+
+    #region States
+    public PlayerStateMachine stateMachine { get; private set; }
+    public PlayerIdleState idleState { get; private set; }
+    public PlayerMoveState moveState { get; private set; }
+
+    public PlayerJumpState jumpState { get; private set; }
+    public PlayerAirState airState { get; private set; }
+    #endregion
+
+    [Header("Collision info")]
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private float groundCheckDistance;
+    [SerializeField] private Transform interactionCheck;
+    [SerializeField] private float interactionCheckRadius;
+    [SerializeField] private LayerMask groundMask;
 
     private void Awake()
     {
-        rigid = GetComponent<Rigidbody2D>();
-        sprite = GetComponent<SpriteRenderer>();
-        coll = GetComponent<BoxCollider2D>();
+
+        stateMachine = new PlayerStateMachine();
+        idleState = new PlayerIdleState(this, stateMachine, "isIdle");
+        moveState = new PlayerMoveState(this, stateMachine, "isWalking");
+        jumpState = new PlayerJumpState(this, stateMachine, "isJumping");
+        airState = new PlayerAirState(this, stateMachine, "isJumping");
+        isFacingRight = true;
+    }
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponentInChildren<Animator>();
+        stateMachine.Initialize(idleState);
     }
 
     private void Update()
     {
-        MovementInput();
-        Jump();
-        DirectionController();
+        stateMachine.currentState.Update();
+
     }
 
     private void FixedUpdate()
     {
-        Movement();
+        stateMachine.currentState.FixedUpdate();
     }
 
-    private void MovementInput()
+    public void SetVelocity(float _xVelocity, float _yVelocity)
     {
-        xInput = Input.GetAxisRaw("Horizontal");
+        rb.velocity = new Vector2(_xVelocity, _yVelocity);
     }
 
-    private void Movement()
-    {
+    public bool IsGrounded() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, groundMask);
 
-        rigid.velocity = new Vector2(xInput * moveSpeed, rigid.velocity.y);
-    }
-
-    private void Jump()
+    public void Flip()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
-        {
-            rigid.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        }
-    }
-
-    private void DirectionController()
-    {
-        if (xInput > 0 && !facingRight)
-        {
-            Flip();
-        }
-        else if (xInput < 0 && facingRight)
-        {
-            Flip();
-        }
-    }
-
-    private void Flip()
-    {
-        facingRight = !facingRight;
+        isFacingRight = !isFacingRight;
         transform.Rotate(0, 180, 0);
     }
-
-    private bool IsGrounded()
+    private void OnDrawGizmos()
     {
-        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, groundLayer);
+        // Checking the ground with ray
+        Gizmos.DrawLine(
+            groundCheck.position,
+            new Vector3(groundCheck.position.x, groundCheck.position.y - groundCheckDistance)
+            );
+
+        // range based checking. using circular range
+        Gizmos.DrawSphere(interactionCheck.position, interactionCheckRadius);
+
     }
 }
