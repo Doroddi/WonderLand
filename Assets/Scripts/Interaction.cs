@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class Interaction : MonoBehaviour
 {
-    // ÀÎÅÍ·¢¼Ç °¡´É ¿©ºÎ
+    // ï¿½ï¿½ï¿½Í·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     [SerializeField] private bool enableInteraction;
     [SerializeField] private int index;
 
@@ -24,7 +24,7 @@ public class Interaction : MonoBehaviour
         }
     }
 
-    // "Player" ·¹ÀÌ¾î¸¦ ¸¸³ª¸é ÀÎÅÍ·¢¼Ç °¡´É ¿©ºÎ¸¦ true·Î ÀúÀå
+    // "Player" ï¿½ï¿½ï¿½Ì¾î¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î¸ï¿½ trueï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.layer.Equals(LayerMask.NameToLayer("Player")))
@@ -33,7 +33,7 @@ public class Interaction : MonoBehaviour
         }
     }
 
-    // "Player" ·¹ÀÌ¾î¸¦ ¹þ¾î³ª¸é ÀÎÅÍ·¢¼Ç °¡´É ¿©ºÎ¸¦ false·Î ÀúÀå
+    // "Player" ï¿½ï¿½ï¿½Ì¾î¸¦ ï¿½ï¿½ï¿½î³ªï¿½ï¿½ ï¿½ï¿½ï¿½Í·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î¸ï¿½ falseï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.layer.Equals(LayerMask.NameToLayer("Player")))
