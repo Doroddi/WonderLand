@@ -1,11 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Events;
 using UnityEngine;
 
 public class NPC : BaseEntity
 {
     private NPCSentence nPCSentence;
     private bool chatBoxAvailable;
+
+    [SerializeField] private bool interactionAvailable;
+
+    private int interaction_order;
+
+    [System.Serializable]
+    public class InteractionFunction : UnityEvent { };
+
+    public InteractionFunction interaction;
+
+
     protected override void Awake()
     {
         base.Awake();
@@ -16,11 +28,19 @@ public class NPC : BaseEntity
         base.Start();
         nPCSentence = GetComponent<NPCSentence>();
         chatBoxAvailable = true;
+        interaction_order = 0;
     }
 
     protected override void Update()
     {
         base.Update();
+
+        if(Input.GetKeyDown(KeyCode.E) 
+            && interactionAvailable 
+            && interaction_order == EpisodeManager.Episode.index) {
+            interaction.Invoke();
+            EpisodeManager.Episode.index++;
+        }
     }
 
     protected override void FixedUpdate()
@@ -36,15 +56,20 @@ public class NPC : BaseEntity
         // get all components 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(interactionCheck.position, interactionCheckRadius);
 
-        foreach (var receiver in colliders)
+        for (int i = 0; i < colliders.Length; i++)
         {
-            if (chatBoxAvailable && receiver.GetComponent<Player>() != null)
-            {
-                nPCSentence.TalkNpc();
-                chatBoxAvailable = false;
-                StartCoroutine("DebounceChatBox");
+            if (colliders[i].GetComponent<Player>() != null)
+            {   
+                if(chatBoxAvailable) {
+                    nPCSentence.TalkNpc();
+                    chatBoxAvailable = false;
+                    StartCoroutine("DebounceChatBox");
+                }
+                interactionAvailable = true;
+                return;
             }
         }
+        interactionAvailable = false;
     }
 
     private IEnumerator DebounceChatBox() {
