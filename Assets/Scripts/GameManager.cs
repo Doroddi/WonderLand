@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    [SerializeField] SceneTransitionManager sceneTransitionManager;
+    [SerializeField] private SceneTransitionManager sceneTransitionManager;
 
     private void Awake()
     {
@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))

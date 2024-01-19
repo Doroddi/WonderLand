@@ -16,7 +16,6 @@ public class Player : MonoBehaviour
     [SerializeField] private float jumpForce;
     private float xInput;
 
-    [Header("Facing Info")]
     private bool facingRight = true;
 
     private void Awake()
@@ -79,4 +78,6 @@ public class Player : MonoBehaviour
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, groundLayer);
     }
+
+    // 끼임 현상 해결
 }
