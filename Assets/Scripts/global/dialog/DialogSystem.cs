@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -11,7 +12,6 @@ public class DialogSystem : MonoBehaviour
 	private DialogData[] dialogs;                   // 현재 분기의 대사 목록 배열
 	[SerializeField]
 	private bool isAutoStart = true;            // 자동 시작 여부
-	private bool isFirst = true;                // 한번만 호출하기 위함
 	private int currentDialogIndex = -1;    // 대사 순번, 초기화는 -1로.
 	private int currentSpeakerIndex = 0;    // 현재 말하는 화자의 speakers 배열 순번
 
@@ -19,14 +19,16 @@ public class DialogSystem : MonoBehaviour
 	private float typingSpeed = 0.05f;          //
 	private bool isTypingEffect = false;        //
 
+	private bool firstLoopEnd = false;
+
+	private StringBuilder sb = new StringBuilder();
+
 	private void Awake()
 	{
-		// Setup();
 	}
 
 	public void Setup()
 	{
-		Debug.Log("setup");
 		// 초기화 시 모든 대화 관련 오브젝트 비활성화
 		for (int i = 0; i < speakers.Length; ++i)
 		{
@@ -34,25 +36,18 @@ public class DialogSystem : MonoBehaviour
 			// 플레이어, NPC는 보이도록 설정
 			speakers[i].spriteRenderer.gameObject.SetActive(true);
 		}
+		SetNextDialog();
+
+		// give delay for reading E keydown to avoid first dialog shows suddenly
+		Invoke("DelaySkip", 1f);
+
 	}
 
 	// 대사 분기를 진행하고, 분기가 종료되었을 때 true를 반환하는 updatedialog 함수
 	public bool UpdateDialog()
 	{
-		// 1회만 호출
-		if (isFirst)
+		if (firstLoopEnd && Input.GetKeyDown(KeyCode.E))
 		{
-			if (isAutoStart)
-			{
-				SetNextDialog();
-			}
-
-			isFirst = false;
-		}
-
-		if (Input.GetKeyDown(KeyCode.E))
-		{
-
 			if (isTypingEffect)
 			{
 				isTypingEffect = false;
@@ -105,6 +100,7 @@ public class DialogSystem : MonoBehaviour
 		speakers[currentSpeakerIndex].textName.text = dialogs[currentDialogIndex].name;
 		// 현재 화자의 대사 텍스트 설정
 		speakers[currentSpeakerIndex].textDialogue.text = dialogs[currentDialogIndex].dialogue;
+
 		StartCoroutine("OnTypingText");
 	}
 
@@ -126,17 +122,17 @@ public class DialogSystem : MonoBehaviour
 
 	private IEnumerator OnTypingText()
 	{
-		int index = 0;
+		int curIdx = 0;
+		string curText = dialogs[currentDialogIndex].dialogue;
 
 		isTypingEffect = true;
+		sb.Clear();
 
 		// 텍스트를 한글자씩 타이핑치듯 재생
-		while (index < dialogs[currentDialogIndex].dialogue.Length)
+		while (curIdx < curText.Length)
 		{
-			speakers[currentSpeakerIndex].textDialogue.text = dialogs[currentDialogIndex].dialogue.Substring(0, index);
-
-			index++;
-
+			sb.Append(curText[curIdx++]);
+			speakers[currentSpeakerIndex].textDialogue.text = sb.ToString();
 			yield return new WaitForSeconds(typingSpeed);
 		}
 
@@ -144,6 +140,11 @@ public class DialogSystem : MonoBehaviour
 
 		// 대사가 완료되었을 때 출력되는 커서 활성화
 		speakers[currentSpeakerIndex].objectArrow.SetActive(true);
+	}
+
+	private void DelaySkip()
+	{
+		firstLoopEnd = true;
 	}
 }
 
