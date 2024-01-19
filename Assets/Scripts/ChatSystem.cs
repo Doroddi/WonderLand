@@ -8,6 +8,7 @@ public class ChatSystem : MonoBehaviour
 
     public Queue<string> sentences;
     public string currentSentence;
+    public GameObject quad;
 
     public TextMeshPro textObj;
 
@@ -24,8 +25,9 @@ public class ChatSystem : MonoBehaviour
 
     }
 
-    public void OnDialogue(string[] lines)
+    public void OnDialogue(string[] lines, Transform chatPoint)
     {
+        transform.position = chatPoint.position;
         sentences = new Queue<string>();
         sentences.Clear();
 
@@ -34,16 +36,22 @@ public class ChatSystem : MonoBehaviour
             sentences.Enqueue(line);
 
         }
-        StartCoroutine(DialogueFlow());
+        gameObject.SetActive(true);
+        StartCoroutine(DialogueFlow(chatPoint));
     }
 
-    IEnumerator DialogueFlow()
+    IEnumerator DialogueFlow(Transform chatPoint)
     {
         yield return null;
         while (sentences.Count > 0)
         {
             currentSentence = sentences.Dequeue();
             textObj.text = currentSentence;
+            float x = textObj.preferredWidth;
+            x = (x>3) ? 3: x + 0.3f;
+            quad.SetActive(true);
+            quad.transform.localScale = new Vector2(x, textObj.preferredHeight + 0.3f);
+            transform.position = new Vector2(chatPoint.position.x, chatPoint.position.y + textObj.preferredHeight / 2);
             yield return new WaitForSeconds(3f);
         }
         Destroy(gameObject);

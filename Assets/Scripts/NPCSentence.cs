@@ -18,8 +18,11 @@ public class NPCSentence : MonoBehaviour
     public void TalkNpc()
     {
         GameObject go = Instantiate(chatBoxPrefab);
+        go.GetComponent<ChatSystem>().gameObject.SetActive(false);
+        go.GetComponent<ChatSystem>().gameObject.transform.SetParent(transform);
 
-        go.GetComponent<ChatSystem>().OnDialogue(sentences);
+    
+        go.GetComponent<ChatSystem>().OnDialogue(sentences, chatTr);
 
     }
 

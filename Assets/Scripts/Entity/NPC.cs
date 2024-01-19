@@ -5,7 +5,7 @@ using UnityEngine;
 public class NPC : BaseEntity
 {
     private NPCSentence nPCSentence;
-
+    private bool chatBoxAvailable;
     protected override void Awake()
     {
         base.Awake();
@@ -15,6 +15,7 @@ public class NPC : BaseEntity
     {
         base.Start();
         nPCSentence = GetComponent<NPCSentence>();
+        chatBoxAvailable = true;
     }
 
     protected override void Update()
@@ -37,11 +38,17 @@ public class NPC : BaseEntity
 
         foreach (var receiver in colliders)
         {
-            if (receiver.GetComponent<Player>() != null)
+            if (chatBoxAvailable && receiver.GetComponent<Player>() != null)
             {
-                Debug.Log("hit");
                 nPCSentence.TalkNpc();
+                chatBoxAvailable = false;
+                StartCoroutine("DebounceChatBox");
             }
         }
+    }
+
+    private IEnumerator DebounceChatBox() {
+        yield return new WaitForSeconds(7f);
+        chatBoxAvailable = true;
     }
 }
