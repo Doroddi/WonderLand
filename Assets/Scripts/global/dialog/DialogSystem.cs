@@ -21,10 +21,10 @@ public class DialogSystem : MonoBehaviour
 
 	private void Awake()
 	{
-		Setup();
+		// Setup();
 	}
 
-	private void Setup()
+	public void Setup()
 	{
 		// 초기화 시 모든 대화 관련 오브젝트 비활성화
 		for ( int i = 0; i < speakers.Length; ++ i )
