@@ -8,7 +8,7 @@ public class NPC : BaseEntity
     private NPCSentence nPCSentence;
     private bool chatBoxAvailable;
 
-    [SerializeField] private bool interactionAvailable;
+    [SerializeField] protected bool interactionAvailable;
 
     private int interaction_order;
 
@@ -55,7 +55,6 @@ public class NPC : BaseEntity
     {
         // get all components 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(interactionCheck.position, interactionCheckRadius);
-
         for (int i = 0; i < colliders.Length; i++)
         {
             if (colliders[i].GetComponent<Player>() != null)
