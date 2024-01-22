@@ -35,9 +35,9 @@ public class NPC : BaseEntity
     {
         base.Update();
 
-        if(Input.GetKeyDown(KeyCode.E) 
-            && interactionAvailable 
-            && interaction_order == EpisodeManager.Episode.index) {
+        if (Input.GetKeyDown(KeyCode.E)
+            && interactionAvailable)
+        {
             interaction.Invoke();
             EpisodeManager.Episode.index++;
         }
@@ -59,8 +59,9 @@ public class NPC : BaseEntity
         for (int i = 0; i < colliders.Length; i++)
         {
             if (colliders[i].GetComponent<Player>() != null)
-            {   
-                if(chatBoxAvailable) {
+            {
+                if (chatBoxAvailable)
+                {
                     nPCSentence.TalkNpc();
                     chatBoxAvailable = false;
                     StartCoroutine("DebounceChatBox");
@@ -72,7 +73,8 @@ public class NPC : BaseEntity
         interactionAvailable = false;
     }
 
-    private IEnumerator DebounceChatBox() {
+    private IEnumerator DebounceChatBox()
+    {
         yield return new WaitForSeconds(7f);
         chatBoxAvailable = true;
     }
