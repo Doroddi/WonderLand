@@ -14,6 +14,9 @@ public class PlayerState
     protected float xInput;
     private string animBoolName;
 
+    protected RaycastHit2D slopeHit;
+    protected const float RAY_DISTANCE = 4f;
+
     public PlayerState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName)
     {
         this.player = _player;
@@ -31,6 +34,12 @@ public class PlayerState
     {
         xInput = Input.GetAxisRaw("Horizontal");
         player.FlipController(xInput);
+         if (Input.GetKeyDown(KeyCode.Space) && player.IsGrounded())
+        {
+            stateMachine.ChangeState(player.jumpState);
+        }
+        
+        FreezePosition();
 
     }
 
@@ -42,14 +51,29 @@ public class PlayerState
 
     public virtual void FixedUpdate()
     {
-        // player.SetVelocity(xInput * player.moveSpeed, player.rb.velocity.y);
-        player.anim.SetFloat("yVelocity", rb.velocity.y);
+        if(!player.IsGrounded()){
+            player.rb.velocity = new Vector2(xInput * player.moveSpeed, player.rb.velocity.y);
+            player.anim.SetFloat("yVelocity", rb.velocity.y);
 
-        if (rb.velocity.y < 0 && !player.IsGrounded())
+            if (rb.velocity.y < 0 && !player.IsGrounded())
+            {
+                stateMachine.ChangeState(player.airState);
+            }
+
+        }
+        FreezePosition();
+        
+    }
+    private void FreezePosition()
+    {
+        if (xInput == 0)
         {
-            stateMachine.ChangeState(player.airState);
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+        }
+        else
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
-
 
 }

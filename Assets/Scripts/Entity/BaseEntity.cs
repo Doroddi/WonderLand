@@ -9,6 +9,8 @@ public class BaseEntity : MonoBehaviour
     public Animator anim { get; private set; }
 
     public Rigidbody2D rb { get; private set; }
+
+    public BoxCollider2D coll;
     #endregion
 
     [Header("Collision info")]
@@ -33,6 +35,7 @@ public class BaseEntity : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
+        coll = GetComponent<BoxCollider2D>();
     }
 
     protected virtual void Update()
@@ -45,8 +48,19 @@ public class BaseEntity : MonoBehaviour
 
     }
 
-    public bool IsGrounded() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, groundMask);
+    public bool IsGrounded()
+    {
 
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, 0.15f);
+
+        for (int i = 0; i < colliders.Length; i++) {
+            if(colliders[i].gameObject.layer.Equals(LayerMask.NameToLayer("Ground"))) {
+                return true;
+            }
+        }
+        return false;
+        
+    }
     public void Flip()
     {
         facingDir = facingDir * -1;
