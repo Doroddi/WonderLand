@@ -42,7 +42,7 @@ public class PlayerState
 
     public virtual void FixedUpdate()
     {
-        player.SetVelocity(xInput * player.moveSpeed, player.rb.velocity.y);
+        // player.SetVelocity(xInput * player.moveSpeed, player.rb.velocity.y);
         player.anim.SetFloat("yVelocity", rb.velocity.y);
 
         if (rb.velocity.y < 0 && !player.IsGrounded())
@@ -50,4 +50,6 @@ public class PlayerState
             stateMachine.ChangeState(player.airState);
         }
     }
+
+
 }

@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Slope : MonoBehaviour
 {
-    private const float RAY_DISTANCE = 5f;
-    private RaycastHit2D slopeHit;
+
     [SerializeField] private float maxSlopeAngle;
     private Rigidbody2D rigid;
+    protected RaycastHit2D slopeHit;
+    protected const float RAY_DISTANCE = 4f;
 
-    Vector2 movement = new Vector2();
-    private float xInput;
+    Vector2 direction = new Vector2();
+
+    // Vector2 movement = new Vector2();
+    [SerializeField] private float xInput;
 
     private void Awake()
     {
@@ -19,7 +22,7 @@ public class Slope : MonoBehaviour
 
     private void Update()
     {
-        xInput = Input.GetAxis("Horizontal");
+        xInput = Input.GetAxisRaw("Horizontal");
         FreezePosition();
     }
 
@@ -28,7 +31,7 @@ public class Slope : MonoBehaviour
         rigid.velocity = AdjustDirectionToSlope() * 4;
     }
 
-    /*public bool IsOnSlope() // 경사면에 있는지 체크
+    public bool IsOnSlope() // 경사면에 있는지 체크
     {
         slopeHit = Physics2D.Raycast(rigid.position, Vector2.down, RAY_DISTANCE, LayerMask.GetMask("Ground"));
         if (slopeHit.collider != null)
@@ -37,11 +40,10 @@ public class Slope : MonoBehaviour
             return angle != 0f && angle < maxSlopeAngle;
         }
         return false;
-    }*/
+    }
 
     private Vector2 AdjustDirectionToSlope() // 이동 벡터와 경사면과의 각도를 가지고 진행 방향 벡터 구하기
     {
-        Vector2 direction = new Vector2();
         slopeHit = Physics2D.Raycast(rigid.position, Vector2.down, RAY_DISTANCE, LayerMask.GetMask("Ground"));
         if (slopeHit.collider != null)
         {
