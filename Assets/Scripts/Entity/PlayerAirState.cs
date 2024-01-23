@@ -26,7 +26,6 @@ public class PlayerAirState : PlayerState
     public override void FixedUpdate()
     {
         base.FixedUpdate();
-        Debug.Log(rb.velocity.y);
         if (player.IsGrounded())
         {
             stateMachine.ChangeState(player.idleState);

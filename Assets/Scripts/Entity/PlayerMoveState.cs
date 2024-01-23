@@ -28,17 +28,11 @@ public class PlayerMoveState : PlayerState
             stateMachine.ChangeState(player.idleState);
         }
 
-        //  if (Input.GetKeyDown(KeyCode.Space) && player.IsGrounded())
-        // {
-        //     stateMachine.ChangeState(player.jumpState);
-        // }
-
-        //FreezePosition();
     }
 
     public override void FixedUpdate()
     {
-        if(player.IsGrounded()) {
+        if(player.isJump) {
             player.SetVelocity(AdjustDirectionToSlope() * player.moveSpeed);
         }else {
             base.FixedUpdate();
@@ -54,7 +48,6 @@ public class PlayerMoveState : PlayerState
         if (slopeHit.collider != null)
         {
             var angle = Vector2.Angle(Vector2.up, slopeHit.normal);
-            Debug.Log(angle);
             float rad = Mathf.Deg2Rad * angle;
             direction.x = xInput;
             direction.y = xInput * Mathf.Tan(rad);
@@ -62,5 +55,4 @@ public class PlayerMoveState : PlayerState
         return direction.normalized;
     }
 
-    
 }

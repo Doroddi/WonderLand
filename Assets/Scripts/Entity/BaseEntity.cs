@@ -9,7 +9,6 @@ public class BaseEntity : MonoBehaviour
     public Animator anim { get; private set; }
 
     public Rigidbody2D rb { get; private set; }
-
     public BoxCollider2D coll;
     #endregion
 
@@ -21,6 +20,8 @@ public class BaseEntity : MonoBehaviour
     [SerializeField] protected LayerMask groundMask;
 
     [SerializeField] protected bool isFacingRight { get; private set; }
+
+    [SerializeField] public bool isJump;
 
     public int facingDir { get; private set; } = 1;
 
@@ -55,9 +56,11 @@ public class BaseEntity : MonoBehaviour
 
         for (int i = 0; i < colliders.Length; i++) {
             if(colliders[i].gameObject.layer.Equals(LayerMask.NameToLayer("Ground"))) {
+                isJump = true;
                 return true;
             }
         }
+        isJump = false;
         return false;
         
     }

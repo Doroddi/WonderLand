@@ -34,7 +34,7 @@ public class PlayerState
     {
         xInput = Input.GetAxisRaw("Horizontal");
         player.FlipController(xInput);
-         if (Input.GetKeyDown(KeyCode.Space) && player.IsGrounded())
+         if (player.IsGrounded() && Input.GetKeyDown(KeyCode.Space))
         {
             stateMachine.ChangeState(player.jumpState);
         }
@@ -51,16 +51,17 @@ public class PlayerState
 
     public virtual void FixedUpdate()
     {
-        if(!player.IsGrounded()){
-            player.rb.velocity = new Vector2(xInput * player.moveSpeed, player.rb.velocity.y);
-            player.anim.SetFloat("yVelocity", rb.velocity.y);
+        Debug.Log(player.isJump);
+        
+        player.rb.velocity = new Vector2(xInput * player.moveSpeed, player.rb.velocity.y);
+        player.anim.SetFloat("yVelocity", player.rb.velocity.y);
 
-            if (rb.velocity.y < 0 && !player.IsGrounded())
-            {
+        if (rb.velocity.y < 0 && !player.isJump)
+         {
                 stateMachine.ChangeState(player.airState);
-            }
+          }
 
-        }
+         
         FreezePosition();
         
     }
