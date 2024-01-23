@@ -23,9 +23,10 @@ public class GameManager : MonoBehaviour
     
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            sceneTransitionManager.NextLevel();
-        }
+    }
+
+    public void NextScene()
+    {
+        sceneTransitionManager.NextLevel();
     }
 }

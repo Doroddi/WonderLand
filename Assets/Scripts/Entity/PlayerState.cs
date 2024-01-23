@@ -40,7 +40,6 @@ public class PlayerState
         }
         
         FreezePosition();
-
     }
 
     public virtual void Exit()
@@ -51,19 +50,16 @@ public class PlayerState
 
     public virtual void FixedUpdate()
     {
-        Debug.Log(player.isJump);
-        
-        player.rb.velocity = new Vector2(xInput * player.moveSpeed, player.rb.velocity.y);
-        player.anim.SetFloat("yVelocity", player.rb.velocity.y);
+        if (!player.isJump)
+        {
+            player.rb.velocity = new Vector2(xInput * player.moveSpeed, player.rb.velocity.y);
+            player.anim.SetFloat("yVelocity", player.rb.velocity.y);
 
-        if (rb.velocity.y < 0 && !player.isJump)
-         {
+            if (rb.velocity.y < 0 && !player.isJump)
+            {
                 stateMachine.ChangeState(player.airState);
-          }
-
-         
-        FreezePosition();
-        
+            }
+        }
     }
     private void FreezePosition()
     {
