@@ -11,11 +11,13 @@ public class PlayerIdleState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
+        rb.constraints = RigidbodyConstraints2D.FreezePositionY;
     }
 
     public override void Exit()
     {
         base.Exit();
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     public override void Update()

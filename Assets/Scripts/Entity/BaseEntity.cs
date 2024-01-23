@@ -66,9 +66,9 @@ public class BaseEntity : MonoBehaviour
         }
     }
 
-    public void SetVelocity(float _xVelocity, float _yVelocity)
+    public void SetVelocity(Vector2 velocity)
     {
-        rb.velocity = new Vector2(_xVelocity, _yVelocity);
+        rb.velocity = velocity;
     }
 
 }
