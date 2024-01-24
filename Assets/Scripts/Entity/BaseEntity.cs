@@ -56,12 +56,10 @@ public class BaseEntity : MonoBehaviour
 
         for (int i = 0; i < colliders.Length; i++)
         {
-            Debug.Log("hi");
 
             if (colliders[i].gameObject.layer.Equals(LayerMask.NameToLayer("Ground")))
             {
                 isJump = true;
-                Debug.Log("hi");
                 return true;
             }
         }
