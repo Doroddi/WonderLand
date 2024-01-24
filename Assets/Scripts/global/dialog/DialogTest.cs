@@ -38,6 +38,5 @@ public class DialogTest : MonoBehaviour
 		// 첫 번째 대사 분기 시작
 		yield return new WaitUntil(() => dialogSystem01.UpdateDialog());
 
-		// UnityEditor.EditorApplication.ExitPlaymode();
 	}
 }
