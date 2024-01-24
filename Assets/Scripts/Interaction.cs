@@ -10,7 +10,7 @@ public class Interaction : MonoBehaviour
     [SerializeField] private int index;
 
     [System.Serializable]
-    public class InteractionFunction : UnityEvent { };
+    public class InteractionFunction : UnityEvent { }
 
     public InteractionFunction interaction;
 
