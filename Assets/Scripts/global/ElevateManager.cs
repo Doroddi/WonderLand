@@ -20,6 +20,7 @@ public class ElevateManager : NPC
     [SerializeField]
     private bool isElevating;
 
+    [SerializeField]
     private int moveDirection;
 
     #endregion
@@ -29,7 +30,6 @@ public class ElevateManager : NPC
     protected override void Start()
     {
         base.Start();
-        moveDirection = 1;
         startX = transform.position.x;
         startY = transform.position.y;
         targetX = startX;

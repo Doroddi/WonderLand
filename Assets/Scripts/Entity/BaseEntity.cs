@@ -54,15 +54,20 @@ public class BaseEntity : MonoBehaviour
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, 0.15f);
 
-        for (int i = 0; i < colliders.Length; i++) {
-            if(colliders[i].gameObject.layer.Equals(LayerMask.NameToLayer("Ground"))) {
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            Debug.Log("hi");
+
+            if (colliders[i].gameObject.layer.Equals(LayerMask.NameToLayer("Ground")))
+            {
                 isJump = true;
+                Debug.Log("hi");
                 return true;
             }
         }
         isJump = false;
         return false;
-        
+
     }
     public void Flip()
     {
