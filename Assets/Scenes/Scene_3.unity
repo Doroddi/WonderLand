@@ -948,7 +948,7 @@ MonoBehaviour:
   - order: 1
     isDialog: 1
   - order: 2
-    isDialog: 1
+    isDialog: 0
   - order: 3
     isDialog: 1
   - order: 4
@@ -1484,11 +1484,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogSystems:
   - order: 1
+    isQuest: 1
     dialogSystem: {fileID: 286089471}
   - order: 2
+    isQuest: 0
     dialogSystem: {fileID: 1744231722}
   nextInteractionOrder: 0
   dialogTest: {fileID: 2033590313}
+  isDialogLeft: 1
 --- !u!212 &902775943
 SpriteRenderer:
   m_ObjectHideFlags: 0
