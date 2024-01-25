@@ -47,13 +47,13 @@ public class NPC : BaseEntity
     {
         base.Update();
 
-        if (Input.GetKeyDown(KeyCode.E)
+        /*if (Input.GetKeyDown(KeyCode.E)
             && interactionAvailable)
         {
             dialog.Invoke();
             interaction.Invoke();
             // EpisodeManager.Episode.index++;
-        }
+        }*/
     }
 
     protected override void FixedUpdate()

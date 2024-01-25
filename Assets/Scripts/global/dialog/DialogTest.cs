@@ -29,6 +29,8 @@ public class DialogTest : MonoBehaviour
 	}
 	public void StartAsync(bool isRestart)
 	{
+		GameManager.instance.Stop();
+
 		if (!isInit && isRestart)
 		{
 			dialogSystem01.Setup();
@@ -51,12 +53,13 @@ public class DialogTest : MonoBehaviour
 		yield return new WaitUntil(() => dialogSystem01.UpdateDialog());
 		InteractionManager.instance.CompleteInteraction();
 		isInit = false;
+		GameManager.instance.Resume();
 	}
 
 	public IEnumerator RestartDialog()
 	{
 		yield return new WaitUntil(() => dialogSystem01.UpdateDialog());
 		isInit = false;
-
-	}
+        GameManager.instance.Resume();
+    }
 }

@@ -13,6 +13,8 @@ public class InteractionManager : MonoBehaviour
     private InteractionElem[] interactions;
 
     public int nextInteraction;
+
+    [SerializeField] public bool isCompleteQuest = true;
     void Start()
     {
     }
@@ -45,6 +47,16 @@ public class InteractionManager : MonoBehaviour
             return;
         }
         this.nextInteraction++;
+    }
+
+    public void CompelteQuest()
+    {
+        isCompleteQuest = true;
+    }
+
+    public void ReQuest()
+    {
+        isCompleteQuest = false;
     }
 
 }

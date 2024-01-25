@@ -41,7 +41,7 @@ public class BaseEntity : MonoBehaviour
 
     protected virtual void Update()
     {
-
+        
     }
 
     protected virtual void FixedUpdate()

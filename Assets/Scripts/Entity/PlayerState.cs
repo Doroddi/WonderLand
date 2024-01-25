@@ -32,6 +32,13 @@ public class PlayerState
 
     public virtual void Update()
     {
+        if (!GameManager.instance.isResume)
+        {
+            xInput = 0;
+            rb.velocity = Vector2.zero;
+            return;
+        }
+
         xInput = Input.GetAxisRaw("Horizontal");
         player.FlipController(xInput);
          if (player.IsGrounded() && Input.GetKeyDown(KeyCode.Space))

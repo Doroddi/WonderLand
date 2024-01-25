@@ -36,7 +36,6 @@ public class Player : BaseEntity
     {
         base.Update();
         stateMachine.currentState.Update();
-
     }
 
     protected override void FixedUpdate()

@@ -14,14 +14,14 @@ public class Interaction : MonoBehaviour
 
     public InteractionFunction interaction;
 
-    private void Update()
+    /*private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && enableInteraction && index == EpisodeManager.Episode.index)
         {
             interaction.Invoke();
-            EpisodeManager.Episode.index++;
+            // EpisodeManager.Episode.index++;
         }
-    }
+    }*/
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
