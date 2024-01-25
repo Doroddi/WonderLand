@@ -36,6 +36,8 @@ public class DialogSystem : MonoBehaviour
 			// 플레이어, NPC는 보이도록 설정
 			speakers[i].spriteRenderer.gameObject.SetActive(true);
 		}
+		currentDialogIndex = -1;    // 대사 순번, 초기화는 -1로.
+		currentSpeakerIndex = 0;
 		SetNextDialog();
 
 		// give delay for reading E keydown to avoid first dialog shows suddenly
@@ -48,7 +50,7 @@ public class DialogSystem : MonoBehaviour
 	{
 		if (firstLoopEnd && Input.GetKeyDown(KeyCode.E))
 		{
-            if (isTypingEffect)
+			if (isTypingEffect)
 			{
 				isTypingEffect = false;
 
@@ -75,7 +77,7 @@ public class DialogSystem : MonoBehaviour
 					// SetActiveObjects 에 캐릭터 이미지를 보이지 않게 하는 부분이 없기 때문에 별도로 호출
 					speakers[i].spriteRenderer.gameObject.SetActive(false);
 				}
-				
+
 				return true;
 			}
 		}

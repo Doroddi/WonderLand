@@ -1,11 +1,10 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
-using UnityEngine.Rendering.VirtualTexturing;
 
 public class DialogTest : MonoBehaviour
 {
-	private static DialogTest dialogTest;
+	public static DialogTest dialogTest;
 
 
 	[SerializeField]
@@ -23,13 +22,25 @@ public class DialogTest : MonoBehaviour
 
 	private void Start() { }
 
-	public void StartAsync()
+
+	public void AdaptDialogSystem(DialogSystem dialogSystem)
 	{
-		if (!isInit)
+		dialogSystem01 = dialogSystem;
+	}
+	public void StartAsync(bool isRestart)
+	{
+		if (!isInit && isRestart)
 		{
 			dialogSystem01.Setup();
 			isInit = true;
 			StartCoroutine("InitDialog");
+
+		}
+		else if (!isInit && !isRestart)
+		{
+			dialogSystem01.Setup();
+			isInit = true;
+			StartCoroutine("RestartDialog");
 		}
 
 		Debug.Log("InitDialog");
@@ -38,5 +49,14 @@ public class DialogTest : MonoBehaviour
 	{
 		// 첫 번째 대사 분기 시작
 		yield return new WaitUntil(() => dialogSystem01.UpdateDialog());
+		InteractionManager.instance.CompleteInteraction();
+		isInit = false;
+	}
+
+	public IEnumerator RestartDialog()
+	{
+		yield return new WaitUntil(() => dialogSystem01.UpdateDialog());
+		isInit = false;
+
 	}
 }
