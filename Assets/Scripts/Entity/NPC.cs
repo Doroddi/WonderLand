@@ -13,10 +13,10 @@ public class NPC : BaseEntity
 
     private int interaction_order;
 
-    /*[System.Serializable]
+    [System.Serializable]
     public class InteractionFunction : UnityEvent { };
 
-    public InteractionFunction interaction;*/
+    public InteractionFunction interaction;
 
     [SerializeField] UnityEvent dialog = null;
 
@@ -24,7 +24,7 @@ public class NPC : BaseEntity
 
     public void Dialog()
     {
-        dialog.AddListener(() => dialogTest.StartAsync());
+        dialog.AddListener(() => dialogTest.StartAsync(true));
         // UnityEventTools.AddPersistentListener(dialog, DialogTest.getInstance().StartAsync);
     }
 
@@ -50,9 +50,8 @@ public class NPC : BaseEntity
         if (Input.GetKeyDown(KeyCode.E)
             && interactionAvailable)
         {
-            Debug.Log("E");
             dialog.Invoke();
-            
+            interaction.Invoke();
             // EpisodeManager.Episode.index++;
         }
     }

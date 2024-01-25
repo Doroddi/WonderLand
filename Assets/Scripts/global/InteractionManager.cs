@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -5,27 +6,57 @@ using UnityEngine;
 
 public class InteractionManager : MonoBehaviour
 {
-   private static InteractionManager interactionManager;
+    public static InteractionManager instance;
 
 
-   private void Awake() {
-    interactionManager = this;
-   }
+    [SerializeField]
+    private InteractionElem[] interactions;
 
-   public static InteractionManager getInstance() {
-    if(interactionManager == null) {
-        interactionManager = new InteractionManager();
+    public int nextInteraction;
+    void Start()
+    {
+    }
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    return interactionManager;
-   }
+    public InteractionElem GetInteractionElem()
+    {
+        Debug.Log("getnextElem");
+        if (nextInteraction >= interactions.Length)
+        {
+            return new InteractionElem(-1, false);
+        }
+        return interactions[nextInteraction];
+    }
+    public void CompleteInteraction()
+    {
+        if (nextInteraction >= interactions.Length)
+        {
+            this.nextInteraction = -1;
+            return;
+        }
+        this.nextInteraction++;
+    }
 
-   public void initInteraction(GameObject obj, int interaction_num) {
+}
+[System.Serializable]
+public struct InteractionElem
+{
 
-        
-
-   }
-
-        
-    
+    public InteractionElem(int o, bool d)
+    {
+        this.order = o;
+        this.isDialog = d;
+    }
+    public int order;
+    public bool isDialog;
 }
