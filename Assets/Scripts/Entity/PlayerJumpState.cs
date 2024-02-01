@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerJumpState : PlayerState
 {
-    private float jumpForce = 7;
+    private float jumpForce = 5;
 
     public PlayerJumpState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
     {

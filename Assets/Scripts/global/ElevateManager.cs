@@ -23,6 +23,10 @@ public class ElevateManager : NPC
     [SerializeField]
     private int moveDirection;
 
+    [SerializeField]
+    private GameObject Background;
+    [SerializeField]
+    private Animator anim;
     #endregion
 
     // Start is called before the first frame update
@@ -34,6 +38,7 @@ public class ElevateManager : NPC
         startY = transform.position.y;
         targetX = startX;
         targetY = startY;
+        anim = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -41,12 +46,15 @@ public class ElevateManager : NPC
     {
         if (!isElevating && Input.GetKeyDown(KeyCode.E) && interactionAvailable)
         {
+            anim.SetTrigger("FadeOut");
+
             interaction.Invoke();
         }
     }
 
     protected override void FixedUpdate()
     {
+        //checkPlayerIn(BackgroundCheck);
         checkInteraction();
         // if e pressed down StartMachine
         if (isElevating)
@@ -92,6 +100,7 @@ public class ElevateManager : NPC
         if (CheckMovedDistance(transform.position.y, targetY, moveDirection == 1))
         {
             EndMachine();
+            anim.SetTrigger("FadeIn");
             return;
         }
         transform.position = new Vector3(transform.position.x,
