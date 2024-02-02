@@ -52,7 +52,7 @@ public class BaseEntity : MonoBehaviour
     public bool IsGrounded()
     {
 
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, 0.15f);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, 0.05f);
 
         for (int i = 0; i < colliders.Length; i++)
         {

@@ -27,6 +27,9 @@ public class ElevateManager : NPC
     private GameObject Background;
     [SerializeField]
     private Animator anim;
+
+
+    private Player _player;
     #endregion
 
     // Start is called before the first frame update
@@ -63,6 +66,8 @@ public class ElevateManager : NPC
         }
     }
 
+
+
     // Define separate checkInteraction Function.
     private void checkInteraction()
     {
@@ -70,7 +75,7 @@ public class ElevateManager : NPC
         Collider2D[] colliders = Physics2D.OverlapCircleAll(interactionCheck.position, interactionCheckRadius);
         for (int i = 0; i < colliders.Length; i++)
         {
-            if (colliders[i].GetComponent<Player>() != null)
+            if ((_player = colliders[i].GetComponent<Player>()) != null)
             {
                 interactionAvailable = true;
                 return;
@@ -91,6 +96,8 @@ public class ElevateManager : NPC
     {
         isElevating = false;
         moveDirection *= -1;
+        GameManager.instance.Resume();
+        GameManager.instance.ReleaseCinemacineVertically();
         return;
     }
 
@@ -105,6 +112,12 @@ public class ElevateManager : NPC
         }
         transform.position = new Vector3(transform.position.x,
         transform.position.y + (moveDirection * machineMovingSpeed), 0);
+
+        GameManager.instance.Stop();
+        GameManager.instance.FixCinemachineVertically();
+
+        _player.transform.position = new Vector3(_player.transform.position.x, _player.transform.position.y + (moveDirection * machineMovingSpeed), 0);
+
     }
 
     // TODO: FIXED POINT CALCULATION ISSUE
