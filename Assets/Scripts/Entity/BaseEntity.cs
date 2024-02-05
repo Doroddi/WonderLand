@@ -19,6 +19,9 @@ public class BaseEntity : MonoBehaviour
     [SerializeField] protected float interactionCheckRadius;
     [SerializeField] protected LayerMask groundMask;
 
+
+    Collider2D prevGO;
+
     [SerializeField] protected bool isFacingRight { get; private set; }
 
     [SerializeField] public bool isJump;
@@ -67,6 +70,28 @@ public class BaseEntity : MonoBehaviour
         return false;
 
     }
+
+    public void ActivateGround()
+    {
+        Vector2 groundCheckY = new Vector2(groundCheck.position.x, groundCheck.position.y + 0.4f);
+
+        RaycastHit2D[] grounds = Physics2D.RaycastAll(groundCheckY, Vector2.down, 15f, LayerMask.GetMask("Ground"));
+
+        if (grounds.Length > 0 && prevGO != grounds[0].collider && prevGO)
+        {
+            prevGO.isTrigger = true;
+
+        }
+
+        Debug.Log(grounds.Length);
+
+        Debug.DrawRay(groundCheck.position, Vector2.down, Color.red);
+
+        grounds[0].collider.isTrigger = false;
+
+        prevGO = grounds[0].collider;
+    }
+
     public void Flip()
     {
         Debug.Log("flip");

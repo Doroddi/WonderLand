@@ -41,7 +41,7 @@ public class PlayerMoveState : PlayerState
 
     }
 
-    private Vector2 AdjustDirectionToSlope() // �̵� ���Ϳ� ������� ������ ������ ���� ���� ���� ���ϱ�
+    private Vector2 AdjustDirectionToSlope()
     {
         Vector2 direction = new Vector2();
         slopeHit = Physics2D.Raycast(rb.position, Vector2.down, RAY_DISTANCE, LayerMask.GetMask("Ground"));

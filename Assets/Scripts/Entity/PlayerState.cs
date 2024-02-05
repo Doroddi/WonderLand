@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEditor.Tilemaps;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class PlayerState
 {
@@ -16,6 +17,7 @@ public class PlayerState
 
     protected RaycastHit2D slopeHit;
     protected const float RAY_DISTANCE = 4f;
+
 
     public PlayerState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName)
     {
@@ -41,12 +43,16 @@ public class PlayerState
 
         xInput = Input.GetAxisRaw("Horizontal");
         player.FlipController(xInput);
+
+        player.ActivateGround();
+
          if (player.IsGrounded() && Input.GetKeyDown(KeyCode.Space))
         {
             stateMachine.ChangeState(player.jumpState);
         }
         
         FreezePosition();
+
     }
 
     public virtual void Exit()
@@ -79,5 +85,6 @@ public class PlayerState
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
+
 
 }

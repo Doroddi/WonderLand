@@ -135,6 +135,5 @@ public class ElevateManager : NPC
     {
         // range based checking. using circular range
         Gizmos.DrawWireSphere(interactionCheck.position, interactionCheckRadius);
-
     }
 }

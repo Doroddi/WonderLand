@@ -16,6 +16,8 @@ public class Player : BaseEntity
     public PlayerAirState airState { get; private set; }
     #endregion
 
+
+
     protected override void Awake()
     {
         base.Awake();
