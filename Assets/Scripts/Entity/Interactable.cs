@@ -44,6 +44,30 @@ public class Interactable : MonoBehaviour
 
                 return;
             }
+
+            // interaction matched
+            if(isDialogLeft && nextElem.order == dialogSystems[nextInteractionOrder].order)
+            {
+
+                dialogTest.AdaptDialogSystem(dialogSystems[nextInteractionOrder].dialogSystem);
+                dialogTest.StartAsync(true);
+
+                // if normal dialog pass
+                if (!dialogSystems[nextInteractionOrder].isQuest)
+                {
+                    nextInteractionOrder++;
+                }
+
+                isDialogLeft = nextInteractionOrder < dialogSystems.Length;
+            } else if (nextElem.order < nextInteractionOrder && isDialogLeft && dialogSystems[nextInteractionOrder].isQuest)
+            {
+                dialogTest.AdaptDialogSystem(dialogSystems[nextInteractionOrder].dialogSystem);
+                dialogTest.StartAsync(false);
+            }
+
+
+/*
+
             if (isDialogLeft && nextElem.order == dialogSystems[nextInteractionOrder].order)
             {
                 dialogTest.AdaptDialogSystem(dialogSystems[nextInteractionOrder].dialogSystem);
@@ -60,8 +84,9 @@ public class Interactable : MonoBehaviour
             }
             else if (isDialogLeft && dialogSystems[nextInteractionOrder].isQuest)
             {
+                dialogTest.AdaptDialogSystem(dialogSystems[nextInteractionOrder].dialogSystem);
                 dialogTest.StartAsync(false);
-            }
+            }*/
         }
     }
 

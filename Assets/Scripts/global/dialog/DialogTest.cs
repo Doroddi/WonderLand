@@ -29,23 +29,22 @@ public class DialogTest : MonoBehaviour
 	}
 	public void StartAsync(bool isRestart)
 	{
-		GameManager.instance.Stop();
 
 		if (!isInit && isRestart)
 		{
-			dialogSystem01.Setup();
+            GameManager.instance.Stop();
+            dialogSystem01.Setup();
 			isInit = true;
 			StartCoroutine("InitDialog");
 
 		}
 		else if (!isInit && !isRestart)
 		{
-			dialogSystem01.Setup();
+            GameManager.instance.Stop();
+            dialogSystem01.Setup();
 			isInit = true;
 			StartCoroutine("RestartDialog");
 		}
-
-		Debug.Log("InitDialog");
 	}
 	public IEnumerator InitDialog()
 	{
