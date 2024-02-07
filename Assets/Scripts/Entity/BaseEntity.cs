@@ -56,7 +56,6 @@ public class BaseEntity : MonoBehaviour
 
     public bool IsGrounded()
     {
-
         Collider2D[] colliders = Physics2D.OverlapBoxAll(groundCheck.position, size, 0);
 
         for (int i = 0; i < colliders.Length; i++)
@@ -89,9 +88,12 @@ public class BaseEntity : MonoBehaviour
 
         Debug.DrawRay(groundCheck.position, Vector2.down, Color.red);
 
-        grounds[0].collider.isTrigger = false;
+        if (grounds.Length > 0)
+        {
+            grounds[0].collider.isTrigger = false;
 
-        prevGO = grounds[0].collider;
+            prevGO = grounds[0].collider;
+        }
     }
 
     public void Flip()
