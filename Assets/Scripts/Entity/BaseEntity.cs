@@ -22,6 +22,8 @@ public class BaseEntity : MonoBehaviour
 
     Collider2D prevGO;
 
+    public Vector2 size;
+
     [SerializeField] protected bool isFacingRight { get; private set; }
 
     [SerializeField] public bool isJump;
@@ -55,7 +57,7 @@ public class BaseEntity : MonoBehaviour
     public bool IsGrounded()
     {
 
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, 0.05f);
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(groundCheck.position, size, 0);
 
         for (int i = 0; i < colliders.Length; i++)
         {
@@ -83,7 +85,7 @@ public class BaseEntity : MonoBehaviour
 
         }
 
-        Debug.Log(grounds.Length);
+        // Debug.Log(grounds.Length);
 
         Debug.DrawRay(groundCheck.position, Vector2.down, Color.red);
 
@@ -117,4 +119,9 @@ public class BaseEntity : MonoBehaviour
         rb.velocity = velocity;
     }
 
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(groundCheck.position, size);
+    }
 }

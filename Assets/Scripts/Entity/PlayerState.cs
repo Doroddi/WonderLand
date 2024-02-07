@@ -16,7 +16,7 @@ public class PlayerState
     private string animBoolName;
 
     protected RaycastHit2D slopeHit;
-    protected const float RAY_DISTANCE = 4f;
+    protected const float RAY_DISTANCE = 0.1f;
 
 
     public PlayerState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName)
@@ -46,11 +46,11 @@ public class PlayerState
 
         player.ActivateGround();
 
-         if (player.IsGrounded() && Input.GetKeyDown(KeyCode.Space))
+        if (player.IsGrounded() && Input.GetKeyDown(KeyCode.Space))
         {
             stateMachine.ChangeState(player.jumpState);
         }
-        
+
         FreezePosition();
 
     }
