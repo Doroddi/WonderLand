@@ -10,18 +10,18 @@ public class Interaction : MonoBehaviour
     [SerializeField] private int index;
 
     [System.Serializable]
-    public class InteractionFunction : UnityEvent { };
+    public class InteractionFunction : UnityEvent { }
 
     public InteractionFunction interaction;
 
-    private void Update()
+    /*private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && enableInteraction && index == EpisodeManager.Episode.index)
         {
             interaction.Invoke();
-            EpisodeManager.Episode.index++;
+            // EpisodeManager.Episode.index++;
         }
-    }
+    }*/
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

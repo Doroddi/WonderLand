@@ -26,10 +26,9 @@ public class PlayerAirState : PlayerState
     public override void FixedUpdate()
     {
         base.FixedUpdate();
-
-        if (rb.velocity.y == 0 || player.IsGrounded())
+        if (player.isJump)
         {
-            stateMachine.ChangeState(player.idleState);
+            stateMachine.ChangeState(player.moveState);
         }
     }
 }

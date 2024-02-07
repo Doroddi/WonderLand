@@ -1294,6 +1294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 862a4f0ad82f7954ea025f15927fec69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coll: {fileID: 0}
   groundCheck: {fileID: 346121476}
   groundCheckDistance: 1.2
   interactionCheck: {fileID: 142908902}
@@ -1301,6 +1302,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 256
+  isJump: 0
   moveSpeed: 4
 --- !u!50 &708825462
 Rigidbody2D:
@@ -1438,7 +1440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1092000661
 Transform:
   m_ObjectHideFlags: 0
@@ -2080,8 +2082,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakers:
-  - CanvasPanel: {fileID: 661429885}
-  - CanvasPanel: {fileID: 1913693523}
+  - spriteRenderer: {fileID: 0}
+    imageDialog: {fileID: 0}
+    textName: {fileID: 0}
+    textDialogue: {fileID: 0}
+    objectArrow: {fileID: 0}
+    panel: {fileID: 0}
+  - spriteRenderer: {fileID: 0}
+    imageDialog: {fileID: 0}
+    textName: {fileID: 0}
+    textDialogue: {fileID: 0}
+    objectArrow: {fileID: 0}
+    panel: {fileID: 0}
   dialogs:
   - speakerIndex: 0
     name: Player
@@ -2761,6 +2773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4ef1a92bc5ac924eaada8d063b03c80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coll: {fileID: 0}
   groundCheck: {fileID: 0}
   groundCheckDistance: 0
   interactionCheck: {fileID: 849990470}
@@ -2768,6 +2781,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 256
+  isJump: 0
   interactionAvailable: 0
   interaction:
     m_PersistentCalls:

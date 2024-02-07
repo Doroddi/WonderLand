@@ -36,6 +36,8 @@ public class DialogSystem : MonoBehaviour
 			// 플레이어, NPC는 보이도록 설정
 			speakers[i].spriteRenderer.gameObject.SetActive(true);
 		}
+		currentDialogIndex = -1;    // 대사 순번, 초기화는 -1로.
+		currentSpeakerIndex = 0;
 		SetNextDialog();
 
 		// give delay for reading E keydown to avoid first dialog shows suddenly

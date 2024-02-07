@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Events;
 using UnityEngine;
+using UnityEditor.Events;
 
 public class NPC : BaseEntity
 {
@@ -17,6 +18,16 @@ public class NPC : BaseEntity
 
     public InteractionFunction interaction;
 
+    [SerializeField] UnityEvent dialog = null;
+
+    public DialogTest dialogTest;
+
+    public void Dialog()
+    {
+        dialog.AddListener(() => dialogTest.StartAsync(true));
+        // UnityEventTools.AddPersistentListener(dialog, DialogTest.getInstance().StartAsync);
+    }
+
 
     protected override void Awake()
     {
@@ -29,18 +40,20 @@ public class NPC : BaseEntity
         nPCSentence = GetComponent<NPCSentence>();
         chatBoxAvailable = true;
         interaction_order = 0;
+        Dialog();
     }
 
     protected override void Update()
     {
         base.Update();
 
-        if (Input.GetKeyDown(KeyCode.E)
+        /*if (Input.GetKeyDown(KeyCode.E)
             && interactionAvailable)
         {
+            dialog.Invoke();
             interaction.Invoke();
-            EpisodeManager.Episode.index++;
-        }
+            // EpisodeManager.Episode.index++;
+        }*/
     }
 
     protected override void FixedUpdate()

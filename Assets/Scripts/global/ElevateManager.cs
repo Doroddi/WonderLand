@@ -20,8 +20,16 @@ public class ElevateManager : NPC
     [SerializeField]
     private bool isElevating;
 
+    [SerializeField]
     private int moveDirection;
 
+    [SerializeField]
+    private GameObject Background;
+    [SerializeField]
+    private Animator anim;
+
+
+    private Player _player;
     #endregion
 
     // Start is called before the first frame update
@@ -29,11 +37,11 @@ public class ElevateManager : NPC
     protected override void Start()
     {
         base.Start();
-        moveDirection = 1;
         startX = transform.position.x;
         startY = transform.position.y;
         targetX = startX;
         targetY = startY;
+        anim = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -41,12 +49,15 @@ public class ElevateManager : NPC
     {
         if (!isElevating && Input.GetKeyDown(KeyCode.E) && interactionAvailable)
         {
+            anim.SetTrigger("FadeOut");
+
             interaction.Invoke();
         }
     }
 
     protected override void FixedUpdate()
     {
+        //checkPlayerIn(BackgroundCheck);
         checkInteraction();
         // if e pressed down StartMachine
         if (isElevating)
@@ -55,6 +66,8 @@ public class ElevateManager : NPC
         }
     }
 
+
+
     // Define separate checkInteraction Function.
     private void checkInteraction()
     {
@@ -62,7 +75,7 @@ public class ElevateManager : NPC
         Collider2D[] colliders = Physics2D.OverlapCircleAll(interactionCheck.position, interactionCheckRadius);
         for (int i = 0; i < colliders.Length; i++)
         {
-            if (colliders[i].GetComponent<Player>() != null)
+            if ((_player = colliders[i].GetComponent<Player>()) != null)
             {
                 interactionAvailable = true;
                 return;
@@ -83,6 +96,8 @@ public class ElevateManager : NPC
     {
         isElevating = false;
         moveDirection *= -1;
+        GameManager.instance.Resume();
+        GameManager.instance.ReleaseCinemacineVertically();
         return;
     }
 
@@ -92,10 +107,17 @@ public class ElevateManager : NPC
         if (CheckMovedDistance(transform.position.y, targetY, moveDirection == 1))
         {
             EndMachine();
+            anim.SetTrigger("FadeIn");
             return;
         }
         transform.position = new Vector3(transform.position.x,
         transform.position.y + (moveDirection * machineMovingSpeed), 0);
+
+        GameManager.instance.Stop();
+        GameManager.instance.FixCinemachineVertically();
+
+        _player.transform.position = new Vector3(_player.transform.position.x, _player.transform.position.y + (moveDirection * machineMovingSpeed), 0);
+
     }
 
     // TODO: FIXED POINT CALCULATION ISSUE
@@ -113,6 +135,5 @@ public class ElevateManager : NPC
     {
         // range based checking. using circular range
         Gizmos.DrawWireSphere(interactionCheck.position, interactionCheckRadius);
-
     }
 }

@@ -4,7 +4,7 @@ using TMPro;
 
 public class DialogTest : MonoBehaviour
 {
-	private static DialogTest dialogTest;
+	public static DialogTest dialogTest;
 
 
 	[SerializeField]
@@ -22,22 +22,43 @@ public class DialogTest : MonoBehaviour
 
 	private void Start() { }
 
-	public void StartAsync()
+
+	public void AdaptDialogSystem(DialogSystem dialogSystem)
 	{
-		if (!isInit)
+		dialogSystem01 = dialogSystem;
+	}
+	public void StartAsync(bool isRestart)
+	{
+
+		if (!isInit && isRestart)
 		{
-			dialogSystem01.Setup();
+            GameManager.instance.Stop();
+            dialogSystem01.Setup();
 			isInit = true;
 			StartCoroutine("InitDialog");
-		}
 
-		Debug.Log("InitDialog");
+		}
+		else if (!isInit && !isRestart)
+		{
+            GameManager.instance.Stop();
+            dialogSystem01.Setup();
+			isInit = true;
+			StartCoroutine("RestartDialog");
+		}
 	}
 	public IEnumerator InitDialog()
 	{
 		// 첫 번째 대사 분기 시작
 		yield return new WaitUntil(() => dialogSystem01.UpdateDialog());
-
-		UnityEditor.EditorApplication.ExitPlaymode();
+		InteractionManager.instance.CompleteInteraction();
+		isInit = false;
+		GameManager.instance.Resume();
 	}
+
+	public IEnumerator RestartDialog()
+	{
+		yield return new WaitUntil(() => dialogSystem01.UpdateDialog());
+		isInit = false;
+        GameManager.instance.Resume();
+    }
 }

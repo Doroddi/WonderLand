@@ -9,6 +9,7 @@ public class BaseEntity : MonoBehaviour
     public Animator anim { get; private set; }
 
     public Rigidbody2D rb { get; private set; }
+    public BoxCollider2D coll;
     #endregion
 
     [Header("Collision info")]
@@ -18,7 +19,14 @@ public class BaseEntity : MonoBehaviour
     [SerializeField] protected float interactionCheckRadius;
     [SerializeField] protected LayerMask groundMask;
 
+
+    Collider2D prevGO;
+
+    public Vector2 size;
+
     [SerializeField] protected bool isFacingRight { get; private set; }
+
+    [SerializeField] public bool isJump;
 
     public int facingDir { get; private set; } = 1;
 
@@ -33,11 +41,12 @@ public class BaseEntity : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
+        coll = GetComponent<BoxCollider2D>();
     }
 
     protected virtual void Update()
     {
-
+        
     }
 
     protected virtual void FixedUpdate()
@@ -45,10 +54,51 @@ public class BaseEntity : MonoBehaviour
 
     }
 
-    public bool IsGrounded() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, groundMask);
+    public bool IsGrounded()
+    {
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(groundCheck.position, size, 0);
+
+        for (int i = 0; i < colliders.Length; i++)
+        {
+
+            if (colliders[i].gameObject.layer.Equals(LayerMask.NameToLayer("Ground")))
+            {
+                isJump = true;
+                return true;
+            }
+        }
+        isJump = false;
+        return false;
+
+    }
+
+    public void ActivateGround()
+    {
+        Vector2 groundCheckY = new Vector2(groundCheck.position.x, groundCheck.position.y + 0.4f);
+
+        RaycastHit2D[] grounds = Physics2D.RaycastAll(groundCheckY, Vector2.down, 15f, LayerMask.GetMask("Ground"));
+
+        if (grounds.Length > 0 && prevGO != grounds[0].collider && prevGO)
+        {
+            prevGO.isTrigger = true;
+
+        }
+
+        // Debug.Log(grounds.Length);
+
+        Debug.DrawRay(groundCheck.position, Vector2.down, Color.red);
+
+        if (grounds.Length > 0)
+        {
+            grounds[0].collider.isTrigger = false;
+
+            prevGO = grounds[0].collider;
+        }
+    }
 
     public void Flip()
     {
+        Debug.Log("flip");
         facingDir = facingDir * -1;
         isFacingRight = !isFacingRight;
         transform.Rotate(0, 180, 0);
@@ -71,4 +121,9 @@ public class BaseEntity : MonoBehaviour
         rb.velocity = velocity;
     }
 
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(groundCheck.position, size);
+    }
 }
