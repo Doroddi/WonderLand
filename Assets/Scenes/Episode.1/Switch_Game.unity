@@ -378,6 +378,7 @@ GameObject:
   - component: {fileID: 428565436}
   - component: {fileID: 428565435}
   - component: {fileID: 428565437}
+  - component: {fileID: 428565438}
   m_Layer: 0
   m_Name: BG
   m_TagString: Untagged
@@ -471,6 +472,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   switchCount: 5
   winText: {fileID: 857930096}
+--- !u!114 &428565438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428565434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77d7b959f7d7eea44886c6148257734e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &582990160 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3781530464080023285, guid: 4e5f90f21a8466e448883a0e38abee20, type: 3}
