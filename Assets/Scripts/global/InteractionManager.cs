@@ -68,7 +68,9 @@ public struct InteractionElem
     {
         this.order = o;
         this.isDialog = d;
+        this.autoStart = false;
     }
     public int order;
     public bool isDialog;
+    public bool autoStart;
 }
