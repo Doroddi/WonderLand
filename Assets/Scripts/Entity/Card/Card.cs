@@ -35,10 +35,13 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     {
         Vector3 mousePoint = Input.mousePosition;
         Debug.Log(mousePoint);
-        Vector3 pos = new Vector3(Math.Min(mousePoint.x, 500f), mousePoint.y, 0f);
+        Vector3 pos = new Vector3(Math.Min(mousePoint.x, 1260f), mousePoint.y, 0f);
         transform.position = pos;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, 10f, LayerMask.GetMask("Sensor"));
-        if (hit) hit.collider.GetComponent<Sensor>().Check();
+        if (hit) {
+            Debug.Log("hit");
+            hit.collider.GetComponent<Sensor>().Check();
+        }
 
     }
 
