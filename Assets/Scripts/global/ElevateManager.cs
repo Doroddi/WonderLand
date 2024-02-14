@@ -28,6 +28,8 @@ public class ElevateManager : NPC
     [SerializeField]
     private Animator anim;
 
+    [SerializeField]
+    private bool isLoop;
 
     private Player _player;
     #endregion

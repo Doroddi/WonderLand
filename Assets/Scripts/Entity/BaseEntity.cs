@@ -76,7 +76,7 @@ public class BaseEntity : MonoBehaviour
     {
         Vector2 groundCheckY = new Vector2(groundCheck.position.x, groundCheck.position.y);
 
-        RaycastHit2D[] grounds = Physics2D.RaycastAll(groundCheckY, Vector2.down, 0.4f, LayerMask.GetMask("Ground"));
+        RaycastHit2D[] grounds = Physics2D.RaycastAll(groundCheckY, Vector2.down, 0.1f, LayerMask.GetMask("Ground"));
 
         if (grounds.Length > 0 && prevGO != grounds[0].collider && prevGO)
         {
