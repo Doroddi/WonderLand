@@ -27,7 +27,7 @@ public class PlayerMoveState : PlayerState
         if (xInput == 0)
         {
             stateMachine.ChangeState(player.idleState);
-            
+
         }
 
     }
@@ -84,8 +84,6 @@ public class PlayerMoveState : PlayerState
         float angle_2 = CalculateAngleWithSlope(directionCheckpoint_2);
 
         float angle = Mathf.Abs(angle_1) >= Mathf.Abs(angle_2) ? angle_1 : angle_2;
-
-        Debug.Log(angle);
 
         float rad = Mathf.Deg2Rad * angle;
 
