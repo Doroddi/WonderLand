@@ -11,6 +11,8 @@ public class PuzzleGameManager : MonoBehaviour
     private int emptyLocation;
     private int size;
     private bool shuffling = false;
+    public GameObject winText;
+
 
     // Create game setup with size * size pieces
     private void CreateGamePieces(float gapThickness)
@@ -56,6 +58,8 @@ public class PuzzleGameManager : MonoBehaviour
         pieces = new List<Transform>();
         size = 3;
         CreateGamePieces(0.01f);
+        shuffling = true;
+        StartCoroutine(WaitShuffle(0.5f));
     }
 
     void Update()
@@ -63,9 +67,9 @@ public class PuzzleGameManager : MonoBehaviour
         // check for completion
         if (!shuffling && CheckCompletion())
         {
-            shuffling = true;
-            StartCoroutine(WaitShuffle(0.5f));
-            shuffling = false;
+            enabled = false;
+            winText.SetActive(true);
+            return ;
         }
         if (Input.GetMouseButtonDown(0))
         {
