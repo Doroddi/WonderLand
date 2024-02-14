@@ -14,6 +14,10 @@ public class Player : BaseEntity
 
     public PlayerJumpState jumpState { get; private set; }
     public PlayerAirState airState { get; private set; }
+
+    [SerializeField]
+    public bool isJumpGame = false;
+
     #endregion
 
 
