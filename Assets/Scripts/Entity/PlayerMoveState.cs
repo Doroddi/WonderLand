@@ -38,6 +38,8 @@ public class PlayerMoveState : PlayerState
         if (player.isJump)
         {
             player.SetVelocity(AdjustDirectionOnSlope() * player.moveSpeed);
+
+            player.jumpingCheck = false;
         }
         else
         {

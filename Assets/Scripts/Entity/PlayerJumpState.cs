@@ -31,6 +31,10 @@ public class PlayerJumpState : PlayerState
     {
         base.FixedUpdate();
 
+        if (player.jumpingCheck)
+        {
+            stateMachine.ChangeState(player.idleState);
+        }
     }
 
 }
