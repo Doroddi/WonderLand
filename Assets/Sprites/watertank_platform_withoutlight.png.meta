@@ -1,0 +1,773 @@
+fileFormatVersion: 2
+guid: e17711ef59a1fa449bf7a5051d31a139
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_0
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 819
+        width: 132
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f110893e50a54ee4cbde5d6eea6bb7b0
+      internalID: -1180148332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_1
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 822
+        width: 95
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c41cff76fcb704a41a619ab6ebfe9a6f
+      internalID: 1742053472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_2
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 752
+        width: 167
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b08f4c68b0a9cc41a87d2df1c2548b4
+      internalID: -2072011794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_3
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 753
+        width: 70
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fca86ea418407cf47b854b879f28e8af
+      internalID: 1709265712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 761
+        width: 84
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af4fbc24ccb677a49a9001285b6b28f8
+      internalID: 29731254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_5
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 502
+        width: 438
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fda38c25c7d90da4c9eb5129ec311aea
+      internalID: 1308709309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_6
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 719
+        width: 63
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 137808fe60ef59746a81aee428e1cc43
+      internalID: -2109534009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_7
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 709
+        width: 102
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff165de134e0f0c4385d03d9776a7e83
+      internalID: 1911674784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_8
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 675
+        width: 81
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8f8fdedb62b79644afd1bb414251cfd
+      internalID: -748800094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_9
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 669
+        width: 66
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb4d6989a6b2e2848b0df6971f34980d
+      internalID: -2028424721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_10
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 469
+        width: 22
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26db74cc6c0b5164e9c5b126f5c99c1f
+      internalID: -561122507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_11
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 471
+        width: 22
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a5a7fb1e5a534840af6121bbf4cf3c6
+      internalID: 2011113328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_12
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 472
+        width: 24
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4098a9a65c4c2b448a8a86b610dd345
+      internalID: 224970971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_13
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 469
+        width: 94
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 325ff4a5b220efd47ad4f62089ded703
+      internalID: -611731193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_14
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 474
+        width: 88
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c93da619177be7341bede6d60d10e2df
+      internalID: 1962192888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_15
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 508
+        width: 128
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28fe25ca6c3e900408bc14166399be5f
+      internalID: 467504906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_16
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 440
+        width: 147
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36cf04ec6b2954f4bbaa9eb9d3f6e15f
+      internalID: 1705596851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_17
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 415
+        width: 137
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3408371538e3a2043930f4850bdef541
+      internalID: -1187908117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_18
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 430
+        width: 15
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7009b2a79626fd479e5813d8b6bbbcf
+      internalID: -2102400560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_19
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 430
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0a3796391ee9104084ec38c0d9fb77b
+      internalID: 1321012192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_20
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 430
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 599de7336320ea94d9fbe6d17d804eb9
+      internalID: -2049743495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_21
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 430
+        width: 34
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d8a842f862bbe54798ddd8c5a49e735
+      internalID: -1069792273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_22
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 171
+        width: 124
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6357c968404481b4e9950e9c85cb57ec
+      internalID: -64344412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_23
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 350
+        width: 139
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 591587c292bde4047923aa04993b0f75
+      internalID: 1257073178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_24
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 169
+        width: 144
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ba358db62d11004ebc5a4fe04634f6b
+      internalID: 200436165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_25
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 172
+        width: 124
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bf64cebe6df607408f5cc4dd6e0280f
+      internalID: 1785555005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_26
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 165
+        width: 124
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9575a32fb1b530b43a70928cde85592c
+      internalID: -967952244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_27
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 171
+        width: 124
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bb0db984ee3ec34d8a0e4e1018587dd
+      internalID: -250047984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watertank_platform_withoutlight_28
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 163
+        width: 67
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 937d63dcbbbcc2c409f04f0bdd267f37
+      internalID: -1938215933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      watertank_platform_withoutlight_0: -1180148332
+      watertank_platform_withoutlight_1: 1742053472
+      watertank_platform_withoutlight_10: -561122507
+      watertank_platform_withoutlight_11: 2011113328
+      watertank_platform_withoutlight_12: 224970971
+      watertank_platform_withoutlight_13: -611731193
+      watertank_platform_withoutlight_14: 1962192888
+      watertank_platform_withoutlight_15: 467504906
+      watertank_platform_withoutlight_16: 1705596851
+      watertank_platform_withoutlight_17: -1187908117
+      watertank_platform_withoutlight_18: -2102400560
+      watertank_platform_withoutlight_19: 1321012192
+      watertank_platform_withoutlight_2: -2072011794
+      watertank_platform_withoutlight_20: -2049743495
+      watertank_platform_withoutlight_21: -1069792273
+      watertank_platform_withoutlight_22: -64344412
+      watertank_platform_withoutlight_23: 1257073178
+      watertank_platform_withoutlight_24: 200436165
+      watertank_platform_withoutlight_25: 1785555005
+      watertank_platform_withoutlight_26: -967952244
+      watertank_platform_withoutlight_27: -250047984
+      watertank_platform_withoutlight_28: -1938215933
+      watertank_platform_withoutlight_3: 1709265712
+      watertank_platform_withoutlight_4: 29731254
+      watertank_platform_withoutlight_5: 1308709309
+      watertank_platform_withoutlight_6: -2109534009
+      watertank_platform_withoutlight_7: 1911674784
+      watertank_platform_withoutlight_8: -748800094
+      watertank_platform_withoutlight_9: -2028424721
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
