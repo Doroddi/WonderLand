@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2298958346316969706
+--- !u!1 &1037017354614736373
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2470273063456135585}
-  - component: {fileID: 9120797000917499538}
-  - component: {fileID: 4605963480319206636}
+  - component: {fileID: 7015795757550261990}
+  - component: {fileID: 6231867437459847421}
+  - component: {fileID: 2891887491946324318}
   m_Layer: 8
-  m_Name: TankFloor2
+  m_Name: GroundIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2470273063456135585
+--- !u!4 &7015795757550261990
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2298958346316969706}
+  m_GameObject: {fileID: 1037017354614736373}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.294111, y: -1.1049322, z: 0}
+  m_LocalPosition: {x: -4.6899734, y: -5.8071027, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &9120797000917499538
+--- !u!212 &6231867437459847421
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2298958346316969706}
+  m_GameObject: {fileID: 1037017354614736373}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,25 +73,25 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -416165881, guid: feaeee7ea1a938a4994a8570bb974ced, type: 3}
+  m_SortingOrder: 6
+  m_Sprite: {fileID: 21300000, guid: 8d90ef45443e5a5409c2971c26fb5e63, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.05, y: 1.3}
+  m_Size: {x: 3.9666667, y: 0.3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!68 &4605963480319206636
+--- !u!68 &2891887491946324318
 EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2298958346316969706}
+  m_GameObject: {fileID: 1037017354614736373}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: c143d0d348e24fc49a66f263c3a4f2a5, type: 2}
@@ -101,8 +101,9 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -3.4497771, y: -0.44193864}
-  - {x: 3.4732924, y: -0.44702446}
+  - {x: -1.9838345, y: 0.14982367}
+  - {x: 0.8473439, y: 0.14980602}
+  - {x: 1.9838343, y: 0.14979887}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
