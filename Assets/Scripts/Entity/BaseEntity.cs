@@ -23,14 +23,16 @@ public class BaseEntity : MonoBehaviour
 
     [SerializeField]
     Collider2D prevGO;
-    bool nullCheck;
+    Collider2D pprevGO;
 
     public Vector2 size;
     public Vector2 LRCheck;
 
-[SerializeField] protected bool isFacingRight { get; private set; }
+    [SerializeField] protected bool isFacingRight { get; private set; }
 
     [SerializeField] public bool isJump;
+
+    [SerializeField] public bool jumpingCheck;
 
     public int facingDir { get; private set; } = 1;
 
@@ -66,8 +68,11 @@ public class BaseEntity : MonoBehaviour
 
             if (colliders[i].gameObject.layer.Equals(LayerMask.NameToLayer("Ground")))
             {
-                isJump = true;
-                return true;
+                if (!colliders[i].isTrigger)
+                {
+                    isJump = true;
+                    return true;
+                }
             }
         }
         isJump = false;
@@ -86,6 +91,8 @@ public class BaseEntity : MonoBehaviour
 
         RaycastHit2D groundCheck_1 = Physics2D.Raycast(groundCheckpoint_1, Vector2.up, 0.92f, LayerMask.GetMask("Ground"));
         RaycastHit2D groundCheck_2 = Physics2D.Raycast(groundCheckpoint_2, Vector2.up, 0.92f, LayerMask.GetMask("Ground"));
+
+        RaycastHit2D groundRayCheck = Physics2D.Raycast(groundCheckY, Vector2.down, 15f, LayerMask.GetMask("Ground"));
 
         /*if (ground && prevGO != ground.collider && prevGO)
         {
@@ -109,8 +116,23 @@ public class BaseEntity : MonoBehaviour
                 ground.collider.isTrigger = false;
 
                 prevGO = ground.collider;
+
+                jumpingCheck = true;
             }
         }
+        /*else if(ground && ground.collider == prevGO)
+        {
+        }
+        else
+        {
+            prevGO.isTrigger = true;
+
+            groundRayCheck.collider.isTrigger = false;
+
+            prevGO = groundRayCheck.collider;
+
+            jumpingCheck = true;
+        }*/
 
         /*if (ground)
         {

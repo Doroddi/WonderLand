@@ -24,6 +24,11 @@ public class PlayerIdleState : PlayerGroundedState
     {
         base.Update();
 
+        if (player.jumpingCheck)
+        {
+            player.jumpingCheck = false;
+        }
+
 
         if (xInput != 0)
         {
