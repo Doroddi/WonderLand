@@ -92,7 +92,7 @@ public class BaseEntity : MonoBehaviour
         RaycastHit2D groundCheck_1 = Physics2D.Raycast(groundCheckpoint_1, Vector2.up, 0.92f, LayerMask.GetMask("Ground"));
         RaycastHit2D groundCheck_2 = Physics2D.Raycast(groundCheckpoint_2, Vector2.up, 0.92f, LayerMask.GetMask("Ground"));
 
-        RaycastHit2D groundRayCheck = Physics2D.Raycast(groundCheckY, Vector2.down, 15f, LayerMask.GetMask("Ground"));
+        // RaycastHit2D groundRayCheck = Physics2D.Raycast(groundCheckY, Vector2.down, 15f, LayerMask.GetMask("Ground"));
 
         /*if (ground && prevGO != ground.collider && prevGO)
         {
