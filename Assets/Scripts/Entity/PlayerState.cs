@@ -35,6 +35,9 @@ public class PlayerState
 
     public virtual void Update()
     {
+        player.ActivateGround();
+        player.IsGrounded();
+
         if (!GameManager.instance.isResume)
         {
             xInput = 0;
@@ -45,9 +48,8 @@ public class PlayerState
         xInput = Input.GetAxisRaw("Horizontal");
         player.FlipController(xInput);
 
-        player.ActivateGround();
 
-        if (player.IsGrounded() && Input.GetKeyDown(KeyCode.Space))
+        if (player.isJump && Input.GetKeyDown(KeyCode.Space))
         {
             stateMachine.ChangeState(player.jumpState);
         }
