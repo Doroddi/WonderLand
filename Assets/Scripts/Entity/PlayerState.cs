@@ -19,6 +19,7 @@ public class PlayerState
     protected const float RAY_DISTANCE = 0.1f;
 
 
+
     public PlayerState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName)
     {
         this.player = _player;
@@ -68,7 +69,7 @@ public class PlayerState
             player.rb.velocity = new Vector2(xInput * player.moveSpeed, player.rb.velocity.y);
             player.anim.SetFloat("yVelocity", player.rb.velocity.y);
 
-            if (rb.velocity.y < 0 && !player.isJump)
+            if (rb.velocity.y < 0 && !player.isJump && stateMachine.currentState != player.airState)
             {
                 stateMachine.ChangeState(player.airState);
             }
