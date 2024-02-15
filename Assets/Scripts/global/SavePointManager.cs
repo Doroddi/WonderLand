@@ -38,7 +38,7 @@ public class SavePointManager : MonoBehaviour
 
     private void ResetPosition(SavePointManager manager)
     {
-        if (!isActiveAndEnabled) return;
+        if (!isSaveEnabled) return;
 
         _player.transform.position = savePoints[curPoint].position;
     }
