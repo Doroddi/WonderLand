@@ -18,7 +18,8 @@ public class SceneTransitionManager : MonoBehaviour
     {
         trasitionAnim.SetTrigger("FadeOut");
         yield return new WaitForSeconds(1);
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        // SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("WaterTank", LoadSceneMode.Single);
         trasitionAnim.SetTrigger("FadeIn");
     }
 }
