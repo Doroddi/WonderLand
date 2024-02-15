@@ -20,6 +20,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     {
         CurrentPos = gameObject.GetComponent<RectTransform>();
     }
+    
     public void OnBeginDrag(PointerEventData eventData)
     {
         _card = gameObject;
