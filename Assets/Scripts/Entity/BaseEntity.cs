@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 public class BaseEntity : MonoBehaviour
@@ -20,11 +21,14 @@ public class BaseEntity : MonoBehaviour
     [SerializeField] protected LayerMask groundMask;
 
 
+    [SerializeField]
     Collider2D prevGO;
+    bool nullCheck;
 
     public Vector2 size;
+    public Vector2 LRCheck;
 
-    [SerializeField] protected bool isFacingRight { get; private set; }
+[SerializeField] protected bool isFacingRight { get; private set; }
 
     [SerializeField] public bool isJump;
 
@@ -34,7 +38,6 @@ public class BaseEntity : MonoBehaviour
     {
 
         isFacingRight = true;
-
     }
 
     protected virtual void Start()
@@ -46,7 +49,7 @@ public class BaseEntity : MonoBehaviour
 
     protected virtual void Update()
     {
-        
+
     }
 
     protected virtual void FixedUpdate()
@@ -76,24 +79,60 @@ public class BaseEntity : MonoBehaviour
     {
         Vector2 groundCheckY = new Vector2(groundCheck.position.x, groundCheck.position.y);
 
-        RaycastHit2D[] grounds = Physics2D.BoxCastAll(groundCheckY, size, 0f, Vector2.down, 0.1f,LayerMask.GetMask("Ground"));
+        RaycastHit2D ground = Physics2D.BoxCast(groundCheckY, size, 0f, Vector2.down, 0.1f, LayerMask.GetMask("Ground"));
 
-        if (grounds.Length > 0 && prevGO != grounds[0].collider && prevGO)
+        Vector2 groundCheckpoint_1 = new Vector2(groundCheck.position.x + 0.35f, groundCheck.position.y + 0.1f);
+        Vector2 groundCheckpoint_2 = new Vector2(groundCheck.position.x - 0.35f, groundCheck.position.y + 0.1f);
+
+        RaycastHit2D groundCheck_1 = Physics2D.Raycast(groundCheckpoint_1, Vector2.up, 0.92f, LayerMask.GetMask("Ground"));
+        RaycastHit2D groundCheck_2 = Physics2D.Raycast(groundCheckpoint_2, Vector2.up, 0.92f, LayerMask.GetMask("Ground"));
+
+        /*if (ground && prevGO != ground.collider && prevGO)
         {
             prevGO.isTrigger = true;
-
         }
 
-        // Debug.Log(grounds.Length);
 
-        Debug.DrawRay(groundCheck.position, Vector2.down, Color.red);
-
-        if (grounds.Length > 0)
+        if (ground && (groundCheck_1 || groundCheck_2))
         {
-            grounds[0].collider.isTrigger = false;
+            ground.collider.isTrigger = false;
 
-            prevGO = grounds[0].collider;
+            prevGO = ground.collider;
+        }*/
+
+        if (ground && ground.collider != prevGO)
+        {
+            if((!groundCheck_1 || groundCheck_1.collider != ground.collider) && (!groundCheck_2 || groundCheck_2.collider != ground.collider))
+            {
+                prevGO.isTrigger = true;
+
+                ground.collider.isTrigger = false;
+
+                prevGO = ground.collider;
+            }
         }
+
+        /*if (ground)
+        {
+            if (nullCheck && prevGO != ground.collider)
+            {
+                prevGO.isTrigger = true;
+
+                ground.collider.isTrigger = false;
+
+                prevGO = ground.collider;
+
+                nullCheck = false;
+            }
+            else
+            {
+                nullCheck = false;
+            }
+        }
+        else
+        {
+            nullCheck = true;
+        }*/
     }
 
     public void Flip()
@@ -119,11 +158,5 @@ public class BaseEntity : MonoBehaviour
     public void SetVelocity(Vector2 velocity)
     {
         rb.velocity = velocity;
-    }
-
-    public void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(groundCheck.position, size);
     }
 }
