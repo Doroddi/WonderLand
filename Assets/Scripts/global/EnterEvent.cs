@@ -39,6 +39,8 @@ public class EnterEvent : ElevateManager
 
     private IEnumerator Enter()
     {
+        GameManager.instance.Stop();
+
         anim.SetTrigger("FadeOut");
         isEntered = true; 
 
@@ -49,10 +51,14 @@ public class EnterEvent : ElevateManager
         yield return new WaitForSeconds(1);
 
         anim.SetTrigger("FadeIn");
+
+        GameManager.instance.Resume();
     }
 
     private IEnumerator Exit()
     {
+        GameManager.instance.Stop();
+
         anim.SetTrigger("FadeOut");
         isEntered = false;
 
@@ -64,5 +70,7 @@ public class EnterEvent : ElevateManager
         yield return new WaitForSeconds(1);
 
         anim.SetTrigger("FadeIn");
+
+        GameManager.instance.Resume();
     }
 }
