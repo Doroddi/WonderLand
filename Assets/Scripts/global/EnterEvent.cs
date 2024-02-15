@@ -28,19 +28,41 @@ public class EnterEvent : ElevateManager
         {
             if (!isEntered)
             {
-                anim.SetTrigger("FadeOut");
-                isEntered = true;
-                go.SetActive(true);
-                anim.SetTrigger("FadeIn");
+                StartCoroutine("Enter");
             }
             else
             {
-                anim.SetTrigger("FadeOut");
-                isEntered = false;
-                go.SetActive(false);
-                anim.SetTrigger("FadeIn");
+                StartCoroutine("Exit");
             }
         }
     }
 
+    private IEnumerator Enter()
+    {
+        anim.SetTrigger("FadeOut");
+        isEntered = true; 
+
+        yield return new WaitForSeconds(1);
+
+        go.SetActive(true);
+
+        yield return new WaitForSeconds(1);
+
+        anim.SetTrigger("FadeIn");
+    }
+
+    private IEnumerator Exit()
+    {
+        anim.SetTrigger("FadeOut");
+        isEntered = false;
+
+        yield return new WaitForSeconds(1);
+
+        go.SetActive(false);
+
+
+        yield return new WaitForSeconds(1);
+
+        anim.SetTrigger("FadeIn");
+    }
 }

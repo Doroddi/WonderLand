@@ -966,6 +966,7 @@ MonoBehaviour:
   LRCheck: {x: 0, y: 0.1}
   isJump: 0
   moveSpeed: 3.5
+  isJumpGame: 0
 --- !u!50 &535129665
 Rigidbody2D:
   serializedVersion: 4
@@ -1785,7 +1786,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_TargetDisplay: 0
 --- !u!1 &1467189194
 GameObject:
