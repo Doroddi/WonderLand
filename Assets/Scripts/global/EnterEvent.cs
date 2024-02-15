@@ -13,42 +13,56 @@ public class EnterEvent : ElevateManager
     private SpriteRenderer sprite;
     public GameObject go;
 
+    /*private float timer;
+    private float waitingTime;
+*/
+ /*   protected override void Start()
+    {
+        timer = 0f;
+        waitingTime = 2f;
+    }
+*/
     protected override void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && interactionAvailable)
         {
             if (!isEntered)
             {
-                //ImageFadeIn();
-                anim.SetTrigger("FadeOut");
-                isEntered = true;
+                StartCoroutine("Enter");
             }
             else
             {
-                //ImageFadeOut();
-                anim.SetTrigger("FadeIn");
-                isEntered = false;
+                StartCoroutine("Exit");
             }
         }
     }
 
-    /*private void ImageFadeIn()
+    private IEnumerator Enter()
     {
-        sprite.color.a =
-        while(color.a <= 255f)
-        {
-            color.a -= 1;
-            sprite.color = color;
-        }
+        anim.SetTrigger("FadeOut");
+        isEntered = true; 
+
+        yield return new WaitForSeconds(1);
+
+        go.SetActive(true);
+
+        yield return new WaitForSeconds(1);
+
+        anim.SetTrigger("FadeIn");
     }
 
-    private void ImageFadeOut()
+    private IEnumerator Exit()
     {
-        Color color = sprite.color;
-        while (color.a >= 0f)
-        {
-            color.a -= 1;
-            sprite.color = color;
-        }
-    }*/
+        anim.SetTrigger("FadeOut");
+        isEntered = false;
+
+        yield return new WaitForSeconds(1);
+
+        go.SetActive(false);
+
+
+        yield return new WaitForSeconds(1);
+
+        anim.SetTrigger("FadeIn");
+    }
 }

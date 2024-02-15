@@ -44,28 +44,26 @@ public class Interactable : MonoBehaviour
 
                 return;
             }
-
-            // interaction matched
-            if(isDialogLeft && nextElem.order == dialogSystems[nextInteractionOrder].order)
+            if (isDialogLeft && nextElem.order == dialogSystems[nextInteractionOrder].order)
             {
-
                 dialogTest.AdaptDialogSystem(dialogSystems[nextInteractionOrder].dialogSystem);
                 dialogTest.StartAsync(true);
-
-                // if normal dialog pass
                 if (!dialogSystems[nextInteractionOrder].isQuest)
                 {
                     nextInteractionOrder++;
                 }
-
+                else
+                {
+                    InteractionManager.instance.ReQuest();
+                }
                 isDialogLeft = nextInteractionOrder < dialogSystems.Length;
-            } else if (nextElem.order < nextInteractionOrder && isDialogLeft && dialogSystems[nextInteractionOrder].isQuest)
+            }
+            else if (isDialogLeft && dialogSystems[nextInteractionOrder].isQuest)
             {
-                dialogTest.AdaptDialogSystem(dialogSystems[nextInteractionOrder].dialogSystem);
                 dialogTest.StartAsync(false);
             }
-
         }
+
     }
 
     private void FixedUpdate()
