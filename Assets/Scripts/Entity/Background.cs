@@ -5,10 +5,9 @@ using UnityEngine.UIElements;
 
 public class Background : MonoBehaviour
 {
-    [SerializeField]
-    private Player player;
-
     private Transform transform;
+
+    private float xInput;
 
     private void Start()
     {
@@ -17,6 +16,8 @@ public class Background : MonoBehaviour
 
     private void Update()
     {
-        transform.position = player.rb.position;
+        xInput = Input.GetAxisRaw("Horizontal");
+
+        transform.position = new Vector2(transform.position.x - xInput * 0.0001f, transform.position.y);
     }
 }

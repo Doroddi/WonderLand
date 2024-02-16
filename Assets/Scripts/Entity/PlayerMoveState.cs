@@ -67,7 +67,8 @@ public class PlayerMoveState : PlayerState
         slopeHit = Physics2D.Raycast(point, Vector2.down, RAY_DISTANCE, LayerMask.GetMask("Ground"));
 
         float angle = Vector2.SignedAngle(Vector2.up, slopeHit.normal);
-        Debug.Log(angle);
+        
+        // Debug.Log(angle);
 
         return angle;
     }
