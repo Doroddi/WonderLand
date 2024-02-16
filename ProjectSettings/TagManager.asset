@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interaction
   - Card
+  - CutScene
   layers:
   - Default
   - TransparentFX
