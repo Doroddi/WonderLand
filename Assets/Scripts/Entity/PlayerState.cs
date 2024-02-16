@@ -46,13 +46,13 @@ public class PlayerState
         }
 
         xInput = Input.GetAxisRaw("Horizontal");
-        player.FlipController(xInput);
 
-
-        if (player.isJump && Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !player.jumpingCheck && player.isJump)
         {
             stateMachine.ChangeState(player.jumpState);
         }
+
+        player.FlipController(xInput);
 
         FreezePosition();
 

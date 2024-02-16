@@ -31,11 +31,11 @@ public class PlayerJumpState : PlayerState
     {
         base.FixedUpdate();
 
-        Debug.Log(player.rb.velocity.y);
+        // Debug.Log(player.rb.velocity.y);
 
         if (player.jumpingCheck && player.isJump && player.rb.velocity.y < 1.5) 
         {
-            stateMachine.ChangeState(player.idleState);
+            stateMachine.ChangeState(player.moveState);
         }
     }
 
