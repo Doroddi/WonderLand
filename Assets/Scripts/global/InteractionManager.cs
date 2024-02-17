@@ -47,7 +47,10 @@ public class InteractionManager : MonoBehaviour
             this.nextInteraction = -1;
             return;
         }
-        this.nextInteraction++;
+        if (isCompleteQuest == true)
+        {
+            this.nextInteraction++;
+        }
     }
 
     public void CompelteQuest()
