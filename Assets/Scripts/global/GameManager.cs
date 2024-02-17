@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+
     private void Update()
     {
 
@@ -36,6 +36,11 @@ public class GameManager : MonoBehaviour
     public void NextScene()
     {
         sceneTransitionManager.NextLevel();
+    }
+
+    public void NextScene(string sceneName)
+    {
+        sceneTransitionManager.ToTargetLevel(sceneName);
     }
 
     public void Resume()
@@ -48,7 +53,8 @@ public class GameManager : MonoBehaviour
         isResume = false;
     }
 
-    public void FixCinemachineVertically() {
+    public void FixCinemachineVertically()
+    {
         _cineMachineVirtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_YDamping = 0;
     }
 

@@ -11,15 +11,28 @@ public class SceneTransitionManager : MonoBehaviour
 
     public void NextLevel()
     {
-        StartCoroutine(FadeOI());
+        StartCoroutine(FadeOINextScene());
     }
 
-    IEnumerator FadeOI()
+    public void ToTargetLevel(string sceneName)
+    {
+        StartCoroutine(FadeOITargetScene(sceneName));
+    }
+
+    IEnumerator FadeOINextScene()
     {
         trasitionAnim.SetTrigger("FadeOut");
         yield return new WaitForSeconds(1);
-        // SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
-        SceneManager.LoadScene("WaterTank", LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        trasitionAnim.SetTrigger("FadeIn");
+    }
+
+    IEnumerator FadeOITargetScene(string sceneName)
+    {
+        trasitionAnim.SetTrigger("FadeOut");
+        yield return new WaitForSeconds(1);
+        // assertion needed
+        SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
         trasitionAnim.SetTrigger("FadeIn");
     }
 }
