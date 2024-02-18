@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 96551555}
   m_Layer: 0
   m_Name: VirtualCamera
-  m_TagString: Untagged
+  m_TagString: PC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -983,7 +983,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coll: {fileID: 0}
-  groundCheck: {fileID: 0}
+  groundCheck: {fileID: 265819629}
   groundCheckDistance: 0
   interactionCheck: {fileID: 1641039479}
   interactionCheckRadius: 0.3
@@ -991,7 +991,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   prevGO: {fileID: 0}
-  size: {x: 0, y: 0}
+  size: {x: 0.7, y: 0.1}
   LRCheck: {x: 0, y: 0}
   isJump: 0
   jumpingCheck: 0
@@ -1325,8 +1325,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e7cf928f0387c41a4a45ec5947ee52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: 
-  autoTransMode: 1
+  nextSceneName: WaterTank
+  autoTransMode: 0
   isNextEpisode: 0
 --- !u!61 &720558935
 BoxCollider2D:
@@ -3287,7 +3287,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2121563551}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 223.05862, y: 161.86629, z: -3.871352}
+  m_LocalPosition: {x: 446.11725, y: 323.73257, z: -7.742704}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

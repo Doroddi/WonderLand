@@ -16,7 +16,13 @@ public class WaterTankSceneManager : MonoBehaviour
     Camera mainCamera;
     Camera curCamera;
 
-    
+    private int clearGame = 0;
+
+    [SerializeField]
+    private int goalCount;
+
+    [SerializeField]
+    private GameObject gO;
     
     void Awake() {
         instance = this;
@@ -24,12 +30,6 @@ public class WaterTankSceneManager : MonoBehaviour
         foreach (MiniGame _mg in minigameLauncher) {
             _mg.camera.enabled = false;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
      public void SetupMiniGame(int gameIdx) {
@@ -42,9 +42,15 @@ public class WaterTankSceneManager : MonoBehaviour
     public void ExitMiniGame() {
         GameManager.instance.Resume();
         SwitchCamera(curCamera, mainCamera);
+        clearGame++;
+        if(clearGame == goalCount)
+        {
+            InteractionManager.instance.CompelteQuest();
+            gO.SetActive(true);
+        }
     }
 
-    void SwitchCamera (Camera prev, Camera next) {
+    private void SwitchCamera (Camera prev, Camera next) {
         Debug.Log(next);
 
         if(prev != null && next != null) { 
