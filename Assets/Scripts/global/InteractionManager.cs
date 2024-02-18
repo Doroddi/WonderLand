@@ -15,10 +15,8 @@ public class InteractionManager : MonoBehaviour
     public int nextInteraction;
 
     [SerializeField] public bool isCompleteQuest = true;
-    void Start()
-    {
-    }
-    private void Awake()
+
+    private void Awake()    
     {
         if (instance == null)
         {
