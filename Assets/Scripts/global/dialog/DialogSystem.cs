@@ -3,6 +3,7 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 public class DialogSystem : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class DialogSystem : MonoBehaviour
 
 	private StringBuilder sb = new StringBuilder();
 
+
+	public UnityEvent evnt;
 	private void Awake()
 	{
 	}

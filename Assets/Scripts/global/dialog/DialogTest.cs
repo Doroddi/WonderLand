@@ -32,16 +32,16 @@ public class DialogTest : MonoBehaviour
 
 		if (!isInit && isRestart)
 		{
-            GameManager.instance.Stop();
-            dialogSystem01.Setup();
+			GameManager.instance.Stop();
+			dialogSystem01.Setup();
 			isInit = true;
 			StartCoroutine("InitDialog");
 
 		}
 		else if (!isInit && !isRestart)
 		{
-            GameManager.instance.Stop();
-            dialogSystem01.Setup();
+			GameManager.instance.Stop();
+			dialogSystem01.Setup();
 			isInit = true;
 			StartCoroutine("RestartDialog");
 		}
@@ -53,12 +53,17 @@ public class DialogTest : MonoBehaviour
 		InteractionManager.instance.CompleteInteraction();
 		isInit = false;
 		GameManager.instance.Resume();
+
+		if (dialogSystem01.evnt != null)
+		{
+			dialogSystem01.evnt.Invoke();
+		}
 	}
 
 	public IEnumerator RestartDialog()
 	{
 		yield return new WaitUntil(() => dialogSystem01.UpdateDialog());
 		isInit = false;
-        GameManager.instance.Resume();
-    }
+		GameManager.instance.Resume();
+	}
 }

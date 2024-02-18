@@ -700,7 +700,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170022783}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.29, y: 5.83, z: 0}
+  m_LocalPosition: {x: 8.64, y: -18.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -834,6 +834,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneTransitionManager: {fileID: 1296617723}
   _cineMachineVirtualCamera: {fileID: 420058158}
+  interactionManager: {fileID: 729519218}
   isResume: 1
 --- !u!4 &235489620
 Transform:
@@ -1298,7 +1299,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 420058156}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.29, y: 5.83, z: -10}
+  m_LocalPosition: {x: 8.64, y: -18.96, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3174,7 +3175,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: e343696d319229f4c920121aca7d7588, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -4727,6 +4728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextSceneName: 
   autoTransMode: 1
+  isNextEpisode: 1
 --- !u!61 &1272372209
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6065,6 +6067,21 @@ MonoBehaviour:
     name: Player
     dialogue: Gotta leave these papers on the desk and crank that valve.
   isAutoStart: 1
+  evnt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1170306664}
+        m_TargetAssemblyTypeName: UnityEngine.Playables.PlayableDirector, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1744231723
 Transform:
   m_ObjectHideFlags: 0
@@ -7291,7 +7308,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2092887543}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.29, y: 5.83, z: -10}
+  m_LocalPosition: {x: 8.64, y: -18.96, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7557,6 +7574,9 @@ MonoBehaviour:
     name: Player
     dialogue: Holy shit where is my file?
   isAutoStart: 1
+  evnt:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &2145860450
 Transform:
   m_ObjectHideFlags: 0
