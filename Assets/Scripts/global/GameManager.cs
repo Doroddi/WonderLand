@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
 
     public void FixCinemachineVertically()
     {
+        Debug.Log(_cineMachineVirtualCamera == null);
         _cineMachineVirtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_YDamping = 0;
     }
 
