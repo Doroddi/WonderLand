@@ -8,6 +8,7 @@ TagManager:
   - Card
   - CutScene
   - PC
+  - Sound
   layers:
   - Default
   - TransparentFX

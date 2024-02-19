@@ -4,6 +4,7 @@ using Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     public InteractionManager interactionManager;
+
+    [SerializeField]
+    public float sound;
 
     public bool isResume = true;
 
@@ -29,11 +33,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    private void Update()
-    {
-
     }
 
     public void NextScene()
@@ -58,7 +57,6 @@ public class GameManager : MonoBehaviour
 
     public void FixCinemachineVertically()
     {
-        Debug.Log(_cineMachineVirtualCamera == null);
         _cineMachineVirtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_YDamping = 0;
     }
 
