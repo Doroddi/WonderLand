@@ -15,7 +15,7 @@ public class GameLink : MonoBehaviour
 
     [SerializeField]
     private int gameOrder;  
-
+    
     void Start()
     {
         
