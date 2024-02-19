@@ -15,6 +15,7 @@ public class Wire : MonoBehaviour
     Vector3 startPosition;
 
     Vector3 startScale;
+    Vector3 wireStartPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -24,11 +25,13 @@ public class Wire : MonoBehaviour
         startPoint.z = 0;
         
         // Moving 오브젝트
-        startScale = this.transform.localScale;
-        Debug.Log("startScale: " + startScale);
+        wireStartPoint = wireMid.transform.position;
 
         startPosition = this.transform.position;
-        Debug.Log("size: " + wireMid.size);
+        startPosition.z = 0;
+
+        startScale = wireMid.transform.localScale;
+        Debug.Log("wire size: " + wireMid.size.x + ", " + wireMid.size.y);
     }
 
     // Update is called once per frame
@@ -41,7 +44,7 @@ public class Wire : MonoBehaviour
         //Debug.Log(newPosition);
 
         // check for nearby connection Points
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(newPosition, .2f);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(newPosition, .1f);
         foreach (Collider2D collider in colliders)
         {
             // make sure not my own collider
@@ -85,9 +88,9 @@ public class Wire : MonoBehaviour
     void UpdateWire(Vector3 newPosition)
     {
 
-        // update position
+        // update position -> Moving 오브젝트 위치 변경
         transform.position = newPosition;
-        //Debug.Log("res: " + (newPosition - startPoint));
+        Debug.Log("newPosition; " + newPosition);
 
         // update direction
         Vector3 direction = newPosition - startPoint;
@@ -95,10 +98,13 @@ public class Wire : MonoBehaviour
 
         // update scale 
         // -> 
-        float dist = Vector2.Distance(startPoint, newPosition);
-        Debug.Log("dist: " + dist);
-        //wireMid.size = new Vector2(dist, wireMid.size.y);
-        wireMid.transform.localScale = new Vector3(dist, 1, 0);
-        Debug.Log("size: " + wireMid.size);
+        float dist = Vector2.Distance(wireStartPoint, newPosition);
+        if(newPosition == startPosition) {
+            Debug.Log("ㅇㅅㅇ");
+            wireMid.transform.localScale = startScale;    
+        } else {
+            wireMid.transform.localScale = new Vector3((dist / wireMid.size.x), wireMid.transform.localScale.y, 0);
+        }
+        Debug.Log("dist: " + dist + "scale_width: " + wireMid.transform.localScale.x);
     }
 }
