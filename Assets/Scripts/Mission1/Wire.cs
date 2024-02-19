@@ -14,16 +14,21 @@ public class Wire : MonoBehaviour
     Vector3 startPoint;
     Vector3 startPosition;
 
+    Vector3 startScale;
+
     // Start is called before the first frame update
     void Start()
     {
         // Wire 하나
         startPoint = this.transform.parent.position;
         startPoint.z = 0;
-        Debug.Log("startPoint: " + startPoint);
+        
         // Moving 오브젝트
+        startScale = this.transform.localScale;
+        Debug.Log("startScale: " + startScale);
+
         startPosition = this.transform.position;
-        Debug.Log("startPosition: " + startPosition);
+        Debug.Log("size: " + wireMid.size);
     }
 
     // Update is called once per frame
@@ -91,7 +96,9 @@ public class Wire : MonoBehaviour
         // update scale 
         // -> 
         float dist = Vector2.Distance(startPoint, newPosition);
-        wireMid.size = new Vector2(dist, wireMid.size.y);
+        Debug.Log("dist: " + dist);
+        //wireMid.size = new Vector2(dist, wireMid.size.y);
+        wireMid.transform.localScale = new Vector3(dist, 1, 0);
         Debug.Log("size: " + wireMid.size);
     }
 }
