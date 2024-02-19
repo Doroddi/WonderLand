@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public CinemachineVirtualCamera _cineMachineVirtualCamera;
 
+    [SerializeField]
+    public InteractionManager interactionManager;
+
     public bool isResume = true;
 
     private void Awake()
@@ -55,11 +58,17 @@ public class GameManager : MonoBehaviour
 
     public void FixCinemachineVertically()
     {
+        Debug.Log(_cineMachineVirtualCamera == null);
         _cineMachineVirtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_YDamping = 0;
     }
 
     public void ReleaseCinemacineVertically()
     {
         _cineMachineVirtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_YDamping = 1;
+    }
+
+    public void DestroyInteractionManager()
+    {
+        Destroy(InteractionManager.instance.gameObject);
     }
 }

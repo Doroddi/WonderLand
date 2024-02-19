@@ -4,10 +4,22 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using static UnityEditor.Experimental.GraphView.Port;
 using UnityEngine.UIElements.Experimental;
+using Cinemachine;
 
 public class SceneTransitionManager : MonoBehaviour
 {
     [SerializeField] private Animator trasitionAnim;
+
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    // 새로운 씬에 아래 내용을 새로 호출
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        GameManager.instance._cineMachineVirtualCamera = GameObject.FindWithTag("PC").GetComponent<CinemachineVirtualCamera>();
+    }
 
     public void NextLevel()
     {
