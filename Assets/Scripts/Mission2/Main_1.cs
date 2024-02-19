@@ -22,7 +22,7 @@ public class Main_1 : MonoBehaviour
 
         yellowGameObject.transform.localScale = new Vector3(onCount * 0.4f, 0.2f, 0f);
 
-        yellowGameObject.transform.position = new Vector3(initPosition.x + 0.5f * yellowGameObject.transform.localScale.x, 0.45f, 0f);
+        yellowGameObject.transform.position = new Vector3(initPosition.x + 0.5f * yellowGameObject.transform.localScale.x, initPosition.y, 0f);
 
         if (onCount == switchCount)
         {
