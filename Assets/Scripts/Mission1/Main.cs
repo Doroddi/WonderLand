@@ -19,7 +19,8 @@ public class Main : MonoBehaviour
         onCount = onCount + points;
         if (onCount == switchCount)
         {
-            winText.SetActive(true);
+            WaterTankSceneManager.instance.ExitMiniGame();
         }
     }
+
 }

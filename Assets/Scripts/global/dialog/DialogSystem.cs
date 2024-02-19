@@ -3,6 +3,7 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 public class DialogSystem : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class DialogSystem : MonoBehaviour
 
 	private StringBuilder sb = new StringBuilder();
 
+
+	public UnityEvent evnt;
 	private void Awake()
 	{
 	}
@@ -34,7 +37,7 @@ public class DialogSystem : MonoBehaviour
 		{
 			SetActiveObjects(speakers[i], false);
 			// 플레이어, NPC는 보이도록 설정
-			speakers[i].spriteRenderer.gameObject.SetActive(true);
+
 		}
 		currentDialogIndex = -1;    // 대사 순번, 초기화는 -1로.
 		currentSpeakerIndex = 0;
@@ -108,10 +111,12 @@ public class DialogSystem : MonoBehaviour
 
 	private void SetActiveObjects(Speaker speaker, bool visible)
 	{
-		speaker.panel.SetActive(visible);
+		speaker.spriteRenderer.gameObject.SetActive(visible);
 		speaker.imageDialog.gameObject.SetActive(visible);
+		speaker.imageDialog.sprite = speaker.spriteRenderer.sprite;
 		speaker.textName.gameObject.SetActive(visible);
 		speaker.textDialogue.gameObject.SetActive(visible);
+		speaker.panel.SetActive(visible);
 
 		// 화살표는 대사가 종료되었을 때만 활성화하기 때문에 항상 false
 		speaker.objectArrow.SetActive(false);
@@ -153,7 +158,7 @@ public class DialogSystem : MonoBehaviour
 [System.Serializable]
 public struct Speaker
 {
-	public SpriteRenderer spriteRenderer;       // 캐릭터 이미지 알파값 제어
+	public Image spriteRenderer;       // 캐릭터 이미지 알파값 제어
 	public Image imageDialog;       // 대화창 Image UI
 
 	// 현재 대사 중인 캐릭터 이름, 대사 출력 UI

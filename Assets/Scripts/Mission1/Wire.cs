@@ -8,6 +8,9 @@ public class Wire : MonoBehaviour
     public SpriteRenderer wireEnd;
     public GameObject lightOn;
 
+    [SerializeField]
+    private Camera camera;
+
     Vector3 startPoint;
     Vector3 startPosition;
 
@@ -22,7 +25,7 @@ public class Wire : MonoBehaviour
     private void OnMouseDrag()
     {
         // mouse position to world point
-        Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 newPosition = camera.ScreenToWorldPoint(Input.mousePosition);
         newPosition.z = 0;
 
         // check for nearby connection Points
@@ -56,7 +59,7 @@ public class Wire : MonoBehaviour
     {
         // turn on light
         lightOn.SetActive(true);
-
+    
         // destory the script
         Destroy(this);
     }

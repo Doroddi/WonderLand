@@ -15,14 +15,13 @@ public class InteractionManager : MonoBehaviour
     public int nextInteraction;
 
     [SerializeField] public bool isCompleteQuest = true;
-    void Start()
-    {
-    }
-    private void Awake()
+
+    private void Awake()    
     {
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -46,7 +45,10 @@ public class InteractionManager : MonoBehaviour
             this.nextInteraction = -1;
             return;
         }
-        this.nextInteraction++;
+        if (isCompleteQuest == true)
+        {
+            this.nextInteraction++;
+        }
     }
 
     public void CompelteQuest()
