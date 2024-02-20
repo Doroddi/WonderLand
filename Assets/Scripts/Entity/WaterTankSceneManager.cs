@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Playables;
+
 using UnityEngine;
 
 public class WaterTankSceneManager : MonoBehaviour
@@ -42,7 +44,9 @@ public class WaterTankSceneManager : MonoBehaviour
     public void ExitMiniGame() {
         GameManager.instance.Resume();
         SwitchCamera(curCamera, mainCamera);
+        minigameLauncher[clearGame].pd.Play();
         clearGame++;
+        
         if(clearGame == goalCount)
         {
             InteractionManager.instance.CompelteQuest();
@@ -51,8 +55,6 @@ public class WaterTankSceneManager : MonoBehaviour
     }
 
     private void SwitchCamera (Camera prev, Camera next) {
-        Debug.Log(next);
-
         if(prev != null && next != null) { 
             prev.enabled = false;
             next.enabled = true;
@@ -64,12 +66,15 @@ public class WaterTankSceneManager : MonoBehaviour
 [System.Serializable]
 public struct MiniGame {
 
-    public MiniGame (GameObject go, Camera cm) {
+    public MiniGame (GameObject go, Camera cm, PlayableDirector pd) {
         this.go = go;
         this.camera = cm;
+        this.pd = pd;
     }
 
     public GameObject go;
     public Camera camera;
+
+    public PlayableDirector pd;
 
 }
