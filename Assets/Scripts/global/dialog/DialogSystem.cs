@@ -61,8 +61,6 @@ public class DialogSystem : MonoBehaviour
 				StopCoroutine("OnTypingText");
 				speakers[currentSpeakerIndex].textDialogue.text = dialogs[currentDialogIndex].dialogue;
 				// 대사 완료 시 출력되는 블록 활성화
-				speakers[currentSpeakerIndex].objectArrow.SetActive(true);
-
 				return false;
 			}
 
@@ -118,8 +116,6 @@ public class DialogSystem : MonoBehaviour
 		speaker.textDialogue.gameObject.SetActive(visible);
 		speaker.panel.SetActive(visible);
 
-		// 화살표는 대사가 종료되었을 때만 활성화하기 때문에 항상 false
-		speaker.objectArrow.SetActive(false);
 
 		// 캐릭터 알파 값 변경
 		Color color = speaker.spriteRenderer.color;
@@ -145,8 +141,6 @@ public class DialogSystem : MonoBehaviour
 
 		isTypingEffect = false;
 
-		// 대사가 완료되었을 때 출력되는 커서 활성화
-		speakers[currentSpeakerIndex].objectArrow.SetActive(true);
 	}
 
 	private void DelaySkip()
@@ -164,7 +158,6 @@ public struct Speaker
 	// 현재 대사 중인 캐릭터 이름, 대사 출력 UI
 	public TextMeshProUGUI textName;
 	public TextMeshProUGUI textDialogue;
-	public GameObject objectArrow;      // 대사가 완료되었을 때 나오는 오브젝트
 
 	public GameObject panel;
 }
