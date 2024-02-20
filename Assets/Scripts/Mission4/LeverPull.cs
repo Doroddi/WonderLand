@@ -10,8 +10,8 @@ public class LeverPull : MonoBehaviour
     Vector3 startPoint;
     Vector3 startPosition;
 
-    const float MAXY = 0.5f;
-    const float MINY = -1.0f;
+    float MAXY;
+    float MINY;
 
     float timelinePosY;
     public bool isInLine;
@@ -22,6 +22,8 @@ public class LeverPull : MonoBehaviour
         startPosition = transform.position;
         Debug.Log("x: " + startPoint.x);
         Debug.Log("y: " + startPoint.y);
+        MINY = startPosition.y - 1.5f;
+        MAXY = startPosition.y;
     }
 
 
@@ -29,9 +31,8 @@ public class LeverPull : MonoBehaviour
     {
         // mouse position to world point
         Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
+        newPosition.x = startPosition.x;
         // Debug.Log(Input.mousePosition);
-        newPosition.x = 0;
         newPosition.z = 0;
 
         
@@ -51,15 +52,6 @@ public class LeverPull : MonoBehaviour
         }
 
         UpdateWire(newPosition);
-
-        // if(newPosition.y < MINY) newPosition.y = MINY;
-        // if(newPosition.y > MAXY) newPosition.y = MAXY;
-        // // update wire
-        // // _handle.transform.position = newPosition;
-        // transform.position = newPosition;
-        // Debug.Log("handle y: " + _handle.transform.position.y);
-        // //Vector3 direction = newPosition - startPoint;
-        // //transform.right = direction;
     }
     
     public void OnMouseUp()
@@ -69,25 +61,12 @@ public class LeverPull : MonoBehaviour
   
     void UpdateWire(Vector3 newPosition)
     {
-        if(newPosition.y < MINY) newPosition.y = MINY;
-        if(newPosition.y > MAXY) newPosition.y = MAXY;
-
+        if(newPosition.y < MINY) {
+            newPosition.y = MINY;
+        }
+        if(newPosition.y > MAXY) {
+            newPosition.y = MAXY;
+        }
         transform.position = newPosition;
     }
-
-    // private void OnMouseUp()
-    // {
-    //     // reset wire position
-    //     UpdateWire(startPosition);
-    // }
-
-    // void UpdateWire(Vector3 newPosition)
-    // {
-    //     // update position
-    //     transform.position = newPosition;
-
-    //     // update direction
-    //     Vector3 direction = newPosition - startPoint;
-    //     transform.right = direction;
-    // }
 }
