@@ -77,7 +77,7 @@ public class ElevateManager : NPC
         Collider2D[] colliders = Physics2D.OverlapCircleAll(interactionCheck.position, interactionCheckRadius);
         for (int i = 0; i < colliders.Length; i++)
         {
-            if ((_player = colliders[i].GetComponent<Player>()) != null)
+            if ((_player = colliders[i].GetComponent<Player>()) != null && _player.isJump)
             {
                 interactionAvailable = true;
                 return;
