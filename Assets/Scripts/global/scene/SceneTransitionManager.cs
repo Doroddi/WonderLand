@@ -15,9 +15,9 @@ public class SceneTransitionManager : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    // 새로운 씬에 아래 내용을 새로 호출
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+
         GameManager.instance._cineMachineVirtualCamera = GameObject.FindWithTag("PC").GetComponent<CinemachineVirtualCamera>();
     }
 
