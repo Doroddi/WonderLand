@@ -14,7 +14,10 @@ public class LeverPull : MonoBehaviour
     float MINY;
 
     float timelinePosY;
-    public bool isInLine;
+    public bool isInLine;   
+    [SerializeField]
+    private Camera camera;
+
 
     void Start()
     {
@@ -30,7 +33,7 @@ public class LeverPull : MonoBehaviour
     public void OnMouseDrag()
     {
         // mouse position to world point
-        Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 newPosition = camera.ScreenToWorldPoint(Input.mousePosition);
         newPosition.x = startPosition.x;
         // Debug.Log(Input.mousePosition);
         newPosition.z = 0;
@@ -45,7 +48,7 @@ public class LeverPull : MonoBehaviour
                 // update
                 UpdateWire(collider.transform.position);
                 lightOn.SetActive(true);
-                
+                WaterTankSceneManager.instance.ExitMiniGame();
                 Destroy(this);
                 return;
             }
