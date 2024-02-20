@@ -31,7 +31,6 @@ public class InteractionManager : MonoBehaviour
 
     public InteractionElem GetInteractionElem()
     {
-        Debug.Log("getnextElem");
         if (nextInteraction >= interactions.Length)
         {
             return new InteractionElem(-1, false);

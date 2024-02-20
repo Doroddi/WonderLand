@@ -9,13 +9,14 @@ public class Wire : MonoBehaviour
     public GameObject lightOn;
 
     [SerializeField]
-    // private Camera camera;
+    private Camera camera;
 
     Vector3 startPoint;
     Vector3 startPosition;
 
     Vector3 startScale;
     Vector3 wireStartPoint;
+
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +32,6 @@ public class Wire : MonoBehaviour
         startPosition.z = 0;
 
         startScale = wireMid.transform.localScale;
-        Debug.Log("wire size: " + wireMid.size.x + ", " + wireMid.size.y);
     }
 
     // Update is called once per frame
@@ -39,7 +39,7 @@ public class Wire : MonoBehaviour
     {
         // mouse position to world point
         // Vector3 newPosition = camera.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 newPosition = camera.ScreenToWorldPoint(Input.mousePosition);
         newPosition.z = 0;
         //Debug.Log(newPosition);
 
@@ -90,8 +90,6 @@ public class Wire : MonoBehaviour
 
         // update position -> Moving 오브젝트 위치 변경
         transform.position = newPosition;
-        Debug.Log("newPosition; " + newPosition);
-
         // update direction
         Vector3 direction = newPosition - startPoint;
         transform.right = direction * transform.lossyScale.x;
@@ -100,11 +98,9 @@ public class Wire : MonoBehaviour
         // -> 
         float dist = Vector2.Distance(wireStartPoint, newPosition);
         if(newPosition == startPosition) {
-            Debug.Log("ㅇㅅㅇ");
             wireMid.transform.localScale = startScale;    
         } else {
             wireMid.transform.localScale = new Vector3((dist / wireMid.size.x), wireMid.transform.localScale.y, 0);
         }
-        Debug.Log("dist: " + dist + "scale_width: " + wireMid.transform.localScale.x);
     }
 }

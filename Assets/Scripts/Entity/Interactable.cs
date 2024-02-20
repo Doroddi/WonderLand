@@ -31,6 +31,9 @@ public class Interactable : MonoBehaviour
     [SerializeField]
     private bool interactionAvailable = false;
 
+    [SerializeField]
+    private GameObject _mark;
+
     // Update is called once per frame
     private void Update()
     {
@@ -69,6 +72,11 @@ public class Interactable : MonoBehaviour
     private void FixedUpdate()
     {
         checkInteraction();
+        if (interactionAvailable && isDialogLeft && InteractionManager.instance.GetInteractionElem().order == dialogSystems[nextInteractionOrder].order) {
+            _mark.SetActive(true);
+        } else {
+            _mark.SetActive(false);
+        }
     }
 
     private void checkInteraction()

@@ -159,7 +159,6 @@ public class BaseEntity : MonoBehaviour
 
     public void Flip()
     {
-        Debug.Log("flip");
         facingDir = facingDir * -1;
         isFacingRight = !isFacingRight;
         transform.Rotate(0, 180, 0);
