@@ -37,7 +37,6 @@ public class GameLink : MonoBehaviour
         if(!isGameStart) {  
             isGameStart = true;
             WaterTankSceneManager.instance.SetupMiniGame(gameOrder);
-            
         }
     }
 

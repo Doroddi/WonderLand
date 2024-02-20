@@ -3322,6 +3322,9 @@ MonoBehaviour:
   - order: 5
     isDialog: 1
     autoStart: 0
+  - order: 6
+    isDialog: 1
+    autoStart: 0
   nextInteraction: 0
   isCompleteQuest: 1
 --- !u!1 &2128474578
