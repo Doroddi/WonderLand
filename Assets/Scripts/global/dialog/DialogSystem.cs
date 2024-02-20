@@ -114,6 +114,7 @@ public class DialogSystem : MonoBehaviour
 		speaker.imageDialog.sprite = speaker.spriteRenderer.sprite;
 		speaker.textName.gameObject.SetActive(visible);
 		speaker.textDialogue.gameObject.SetActive(visible);
+		speaker.line.gameObject.SetActive(visible);
 		speaker.panel.SetActive(visible);
 
 
@@ -158,6 +159,7 @@ public struct Speaker
 	// 현재 대사 중인 캐릭터 이름, 대사 출력 UI
 	public TextMeshProUGUI textName;
 	public TextMeshProUGUI textDialogue;
+	public Image line;
 
 	public GameObject panel;
 }
