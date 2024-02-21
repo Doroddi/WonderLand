@@ -30,6 +30,6 @@ public class NextScene : MonoBehaviour
             Debug.Assert(nextSceneName != null);
             GameManager.instance.NextScene(nextSceneName);
         }
+        gameObject.SetActive(false);
     }
-
 }
