@@ -11,7 +11,6 @@ public class PuzzleGameManager : MonoBehaviour
     private int emptyLocation;
     private int size;
     private bool shuffling = false;
-    public GameObject winText;
 
 
     // Create game setup with size * size pieces
@@ -68,7 +67,7 @@ public class PuzzleGameManager : MonoBehaviour
         if (!shuffling && CheckCompletion())
         {
             enabled = false;
-            winText.SetActive(true);
+            WaterTankSceneManager.instance.ExitMiniGame();
             return ;
         }
         if (Input.GetMouseButtonDown(0))
