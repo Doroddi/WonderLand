@@ -40,7 +40,7 @@ public class ChatSystem : MonoBehaviour
             float x = textObj.preferredWidth;
             x = (x>3) ? 3: x + 1f;
             quad.SetActive(true);
-            quad.transform.localScale = new Vector2(x, textObj.preferredHeight);
+            // quad.transform.localScale = new Vector2(x, textObj.preferredHeight);
 
             transform.position = new Vector2(chatPoint.position.x, chatPoint.position.y + textObj.preferredHeight / 2);
             yield return new WaitForSeconds(3f);
