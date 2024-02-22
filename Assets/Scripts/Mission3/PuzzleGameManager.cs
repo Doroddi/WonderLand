@@ -12,6 +12,8 @@ public class PuzzleGameManager : MonoBehaviour
     private int size;
     private bool shuffling = false;
 
+    [SerializeField] private Camera camera;
+
 
     // Create game setup with size * size pieces
     private void CreateGamePieces(float gapThickness)
@@ -72,7 +74,7 @@ public class PuzzleGameManager : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            RaycastHit2D hit = Physics2D.Raycast(camera.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             if (hit)
             {
                 for (int i = 0; i < pieces.Count; i++)
