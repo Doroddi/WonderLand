@@ -2354,7 +2354,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &689986413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3299,7 +3299,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1036496269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5842,8 +5842,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.42655015, y: -0.45053434, z: 0}
-    m_Extent: {x: 5.74175, y: 3.326418, z: 0}
+    m_Center: {x: 0.42328668, y: -0.45470822, z: 0}
+    m_Extent: {x: 5.743087, y: 3.3305917, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -7473,7 +7473,7 @@ MonoBehaviour:
   interactionCheck: {fileID: 1936200637}
   interactionCheckRadius: 1.2
   nextInteractionOrder: 0
-  dialogTest: {fileID: 0}
+  dialogTest: {fileID: 534164047}
   isDialogLeft: 1
   interactionAvailable: 0
   _mark: {fileID: 15659639}
@@ -7698,7 +7698,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1.5
+  orthographic size: 3.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7838,7 +7838,7 @@ MonoBehaviour:
   m_BindingMode: 4
   m_FollowOffset: {x: 0, y: 1.4699998, z: -10}
   m_XDamping: 1
-  m_YDamping: 1
+  m_YDamping: 0
   m_ZDamping: 1
   m_AngularDampingMode: 0
   m_PitchDamping: 0
@@ -7996,8 +7996,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 13.482899, y: -0.38897204, z: 0}
-    m_Extent: {x: 18.8741, y: 3.610028, z: 0}
+    m_Center: {x: 13.481851, y: -0.38384998, z: 0}
+    m_Extent: {x: 18.874851, y: 3.6129498, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
