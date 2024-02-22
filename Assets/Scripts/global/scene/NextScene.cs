@@ -16,6 +16,11 @@ public class NextScene : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D coll)
     {
+        ChangeScene();
+        
+    }
+    public void ChangeScene() {
+        Debug.Log("change");
         if (isNextEpisode)
         {
             GameManager.instance.DestroyInteractionManager();
@@ -27,7 +32,6 @@ public class NextScene : MonoBehaviour
         }
         else
         {
-            Debug.Assert(nextSceneName != null);
             GameManager.instance.NextScene(nextSceneName);
         }
     }
