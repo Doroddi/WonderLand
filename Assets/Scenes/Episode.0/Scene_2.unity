@@ -456,7 +456,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &276155067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -931,7 +931,7 @@ GameObject:
   - component: {fileID: 691959422}
   - component: {fileID: 691959421}
   m_Layer: 0
-  m_Name: Dialog010Emitter
+  m_Name: Dialog000Emitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1833,6 +1833,79 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1984398598
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1984398601}
+  - component: {fileID: 1984398600}
+  - component: {fileID: 1984398599}
+  m_Layer: 0
+  m_Name: Monologue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1984398599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984398598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4bb93720838cf44bb8cea747fdb27b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogManager: {fileID: 909054846}
+  dialogSystem: {fileID: 1807520368}
+--- !u!61 &1984398600
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984398598}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &1984398601
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984398598}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -11.18, y: -6.83, z: -0.43532687}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2000084724
 GameObject:
   m_ObjectHideFlags: 0
@@ -1958,7 +2031,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
       propertyPath: dialogs.Array.size
-      value: 5
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: speakers.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
       propertyPath: dialogs.Array.data[1].name
@@ -1985,8 +2062,21 @@ PrefabInstance:
       value: Granny
       objectReference: {fileID: 0}
     - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: speakers.Array.data[2].line
+      value: 
+      objectReference: {fileID: 2001164482}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: speakers.Array.data[2].panel
+      value: 
+      objectReference: {fileID: 2001164485}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[0].dialogue
+      value: Oh, that's right. The boss told me to stop by the office right away
+        when I get to work today, right?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
       propertyPath: dialogs.Array.data[1].dialogue
-      value: Hi Boss
+      value: I almost forgot. Let's stop by the boss' office first.
       objectReference: {fileID: 0}
     - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
       propertyPath: dialogs.Array.data[2].dialogue
@@ -2008,6 +2098,10 @@ PrefabInstance:
       propertyPath: dialogs.Array.data[6].dialogue
       value: HI BYE
       objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: speakers.Array.data[2].textName
+      value: 
+      objectReference: {fileID: 2001164484}
     - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
       propertyPath: dialogs.Array.data[1].speakerIndex
       value: 0
@@ -2033,9 +2127,21 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: speakers.Array.data[2].imageDialog
+      value: 
+      objectReference: {fileID: 2001164481}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: speakers.Array.data[2].textDialogue
+      value: 
+      objectReference: {fileID: 2001164483}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
       propertyPath: speakers.Array.data[1].spriteRenderer
       value: 
       objectReference: {fileID: 1780142707}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: speakers.Array.data[2].spriteRenderer
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
       propertyPath: evnt.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 6
@@ -2058,7 +2164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7708058123935682887, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
       propertyPath: m_Name
-      value: Dialog001
+      value: Dialog000
       objectReference: {fileID: 0}
     - target: {fileID: 7708058124223480493, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
       propertyPath: m_Sprite
@@ -2074,6 +2180,55 @@ PrefabInstance:
 --- !u!4 &2001164480 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2866683924021194330, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+  m_PrefabInstance: {fileID: 2001164479}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2001164481 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7903554742824344422, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+  m_PrefabInstance: {fileID: 2001164479}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2001164482 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5263608750445931144, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+  m_PrefabInstance: {fileID: 2001164479}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2001164483 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4348524317882200478, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+  m_PrefabInstance: {fileID: 2001164479}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2001164484 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7974139983117553482, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+  m_PrefabInstance: {fileID: 2001164479}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2001164485 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4789428566721426906, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
   m_PrefabInstance: {fileID: 2001164479}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2146048600

@@ -25,7 +25,7 @@ public class NPCSentence : MonoBehaviour
 
      private IEnumerator DebounceChatBox()
     {
-        yield return new WaitForSeconds(7f);
+        yield return new WaitForSeconds(1f);
         chatBoxAvailable = true;
     }
     public void TalkNpc()

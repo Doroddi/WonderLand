@@ -4383,15 +4383,624 @@ PrefabInstance:
       value: DialogSystem
       objectReference: {fileID: 0}
     - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.size
+      value: 53
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: speakers.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
       propertyPath: dialogs.Array.data[1].name
-      value: Mouse
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
       propertyPath: dialogs.Array.data[3].name
       value: Mouse
       objectReference: {fileID: 0}
     - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[5].name
+      value: Mouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[6].name
+      value: Mouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[7].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[8].name
+      value: Mouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[9].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[10].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[11].name
+      value: Mouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[12].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[13].name
+      value: Mouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[14].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[15].name
+      value: Chief
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[16].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[17].name
+      value: Chief
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[18].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[19].name
+      value: Chief
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[20].name
+      value: Chief
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[21].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[22].name
+      value: Chief
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[23].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[24].name
+      value: Chief
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[25].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[26].name
+      value: Chief
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[27].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[28].name
+      value: Chief
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[29].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[30].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[31].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[32].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[33].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[34].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[35].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[36].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[37].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[38].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[39].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[40].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[41].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[42].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[43].name
+      value: Chief
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[44].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[45].name
+      value: Chief
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[46].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[47].name
+      value: Chief
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[48].name
+      value: Chief
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[49].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[50].name
+      value: Chief
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[51].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[52].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[53].name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: speakers.Array.data[2].line
+      value: 
+      objectReference: {fileID: 101153923}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: speakers.Array.data[2].panel
+      value: 
+      objectReference: {fileID: 193101981}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[0].dialogue
+      value: "Ugh\u2026 Where am I?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[1].dialogue
+      value: What is it... I think I fall off from somewhere... Was there a village
+        like this underneath the city?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[2].dialogue
+      value: What on Earth is this place...
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[3].dialogue
+      value: Oh, you're up! I was surprised when you were suddenly pushed here by
+        the current! If it weren't for me, you'd be drowned.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[4].dialogue
+      value: "Oh\u2026 I see\u2026Thank you \u2026 By the way, what is this place?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[5].dialogue
+      value: This is the River of Tears village. It's the first place you're going
+        to face the water that flows down from the topside.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[6].dialogue
+      value: Bro, you look clean in whatever you're dressed up, but where did you
+        come from?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[7].dialogue
+      value: Uh... I think I'm from the city up there.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[8].dialogue
+      value: What? You're from there? No way... there's no connection between that
+        side and this side... what the hell are you getting into?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[9].dialogue
+      value: (No connection? Then how do I get back...?)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[10].dialogue
+      value: It just happened out of the blue, so I'm not sure. Do you have any clue
+        to get back up?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[11].dialogue
+      value: As far as I know, I don't think so... Oh, maybe the village chief knows
+        something because he's lived for a long time. Go see him.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[12].dialogue
+      value: Where is he?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[13].dialogue
+      value: Chief lives in the highest house in village. Look to the right.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[14].dialogue
+      value: Right side... okay thank you.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[15].dialogue
+      value: Hmm? I've never seen you before. Who are you?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[16].dialogue
+      value: Oh, I... (explain what happened)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[17].dialogue
+      value: "Topside\u2026 It's been a long time since I've seen someone from there."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[18].dialogue
+      value: Oh, has anyone come from there before?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[19].dialogue
+      value: Did you see a huge structure in the middle of village? Was it 30 years
+        ago?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[20].dialogue
+      value: Around that time, some people from Topside in black suits like you came
+        and built that facility.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[21].dialogue
+      value: (So there have been people from there to here before... I'm glad to
+        hear that.) Then do you know where they went after that??
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[22].dialogue
+      value: Uh... I think I remember, but... we need a ship to use that route...
+        we'll have to wait a while for the boat to come back.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[23].dialogue
+      value: "I see.(Guess I\u2019ll have to wait than\u2026 what a mess)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[24].dialogue
+      value: Oh, you seem to have to wait here anyway, then can I ask you a favor
+        in the meantime?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[25].dialogue
+      value: What is it?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[26].dialogue
+      value: The water quality in the village has deteriorated so much lately, maybe
+        because of the aging of the facilities in the center of the village, but
+        since you're from above, I think you know something what to do.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[27].dialogue
+      value: (That facility in the center of village must have been a septic tank)
+        Okay, maybe I can do something about it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[28].dialogue
+      value: Oh, thank you. This is an item the black suits left to the previous
+        chief when they built that. Maybe it could help.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[29].dialogue
+      value: "I\u2019ll do my best."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[30].dialogue
+      value: It's too dark. I need to turn on the light first.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[31].dialogue
+      value: As expected, this was the septic tank. But I think the pump is dead.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[32].dialogue
+      value: Now it's working, but the color of water is too weird, the filter must
+        be changed.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[33].dialogue
+      value: Now it's working, but the color of water is too weird, the filter must
+        be changed.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[34].dialogue
+      value: Done! By the way, this facility is designed to turn off the system while
+        the filter is being replaced.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[35].dialogue
+      value: Maybe I can get the system back up in the top control room.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[36].dialogue
+      value: I have to solve the puzzle to log in... damn...
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[37].dialogue
+      value: But this logo is... Alice..?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[38].dialogue
+      value: Alice must have been responsible for the maintenance of this septic
+        tank.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[39].dialogue
+      value: "But if what the chief said was right, Alice was discharging wastewater
+        for at least 30 years and neglected the septic tank like this\u2026."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[40].dialogue
+      value: "I thought anyone could use clean water like us every day\u2026 There
+        were people who couldn't because of us\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[41].dialogue
+      value: "Well, the system is working again\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[42].dialogue
+      value: Let's go back.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[43].dialogue
+      value: "Clean water is starting to come out in village again! You're quite
+        useful, aren\u2019t you?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[44].dialogue
+      value: Haha.. don't mention it. Oh! Did the boat come back in the meantime?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[45].dialogue
+      value: Oh, the boat just returned, and the people who came back said there
+        was a rabbit carrying bunch of paper, the boat must have been late to come
+        back after checking who the owner was.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[46].dialogue
+      value: (Oh, right! My documents! The rabbit bot came here, too!) Where did
+        they say the rabbit went?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[47].dialogue
+      value: Hmm? I don't know... but they said the rabbit went the way you asked
+        before.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[48].dialogue
+      value: You can get on the boat right away at the dock on the right side of
+        town, I've already told them about you.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[49].dialogue
+      value: Thank you! I'll get going now.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[50].dialogue
+      value: Okay, thank you. Goodbye, young man!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[51].dialogue
+      value: (But that septic tank... if nobody does the maintenance like now, the
+        same problem will happen again one day...)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[52].dialogue
+      value: (Well, Let's focus on getting the document back and going back)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[53].dialogue
+      value: (Well, Let's focus on getting the document back and going back)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: speakers.Array.data[2].textName
+      value: 
+      objectReference: {fileID: 357764050}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[1].speakerIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[5].speakerIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[6].speakerIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[7].speakerIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[8].speakerIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[9].speakerIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: speakers.Array.data[2].imageDialog
+      value: 
+      objectReference: {fileID: 2083919886}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[11].speakerIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[12].speakerIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[13].speakerIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[14].speakerIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[15].speakerIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[16].speakerIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[17].speakerIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[18].speakerIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[19].speakerIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[20].speakerIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[21].speakerIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[22].speakerIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[23].speakerIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[24].speakerIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[25].speakerIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[26].speakerIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[27].speakerIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[28].speakerIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[29].speakerIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[43].speakerIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[44].speakerIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[45].speakerIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[46].speakerIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[47].speakerIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[48].speakerIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[49].speakerIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[50].speakerIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: dialogs.Array.data[51].speakerIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: speakers.Array.data[2].textDialogue
+      value: 
+      objectReference: {fileID: 181072998}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
       propertyPath: speakers.Array.data[1].spriteRenderer
+      value: 
+      objectReference: {fileID: 1759748541}
+    - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}
+      propertyPath: speakers.Array.data[2].spriteRenderer
       value: 
       objectReference: {fileID: 1759748541}
     - target: {fileID: 7708058123565096939, guid: 40308e34a56bc3b48aba6d0636851242, type: 3}

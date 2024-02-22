@@ -123,6 +123,83 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &157634587
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 157634589}
+  - component: {fileID: 157634588}
+  m_Layer: 0
+  m_Name: InteractionManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &157634588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157634587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b4f6294ea8654337b6b062330e4d16a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactions:
+  - order: 1
+    isDialog: 1
+    autoStart: 1
+  - order: 2
+    isDialog: 1
+    autoStart: 0
+  - order: 3
+    isDialog: 1
+    autoStart: 0
+  - order: 4
+    isDialog: 1
+    autoStart: 0
+  - order: 5
+    isDialog: 1
+    autoStart: 0
+  - order: 6
+    isDialog: 1
+    autoStart: 0
+  - order: 7
+    isDialog: 1
+    autoStart: 0
+  - order: 8
+    isDialog: 1
+    autoStart: 0
+  - order: 9
+    isDialog: 1
+    autoStart: 0
+  - order: 10
+    isDialog: 1
+    autoStart: 0
+  nextInteraction: 0
+  isCompleteQuest: 0
+--- !u!4 &157634589
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157634587}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.176133, y: -15.217823, z: 0.16362044}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &254527687
 GameObject:
   m_ObjectHideFlags: 0
