@@ -13,17 +13,7 @@ public class ChatSystem : MonoBehaviour
     public TextMeshPro textObj;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+  
 
     public void OnDialogue(string[] lines, Transform chatPoint)
     {
@@ -48,9 +38,10 @@ public class ChatSystem : MonoBehaviour
             currentSentence = sentences.Dequeue();
             textObj.text = currentSentence;
             float x = textObj.preferredWidth;
-            x = (x>3) ? 3: x + 0.3f;
+            x = (x>3) ? 3: x + 1f;
             quad.SetActive(true);
-            quad.transform.localScale = new Vector2(x, textObj.preferredHeight + 0.3f);
+            quad.transform.localScale = new Vector2(x, textObj.preferredHeight);
+
             transform.position = new Vector2(chatPoint.position.x, chatPoint.position.y + textObj.preferredHeight / 2);
             yield return new WaitForSeconds(3f);
         }

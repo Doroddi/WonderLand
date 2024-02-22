@@ -20,7 +20,6 @@ public class NextScene : MonoBehaviour
         
     }
     public void ChangeScene() {
-        Debug.Log("change");
         if (isNextEpisode)
         {
             GameManager.instance.DestroyInteractionManager();
