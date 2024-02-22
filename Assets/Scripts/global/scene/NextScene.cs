@@ -34,6 +34,6 @@ public class NextScene : MonoBehaviour
         {
             GameManager.instance.NextScene(nextSceneName);
         }
+        gameObject.SetActive(false);
     }
-
 }

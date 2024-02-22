@@ -10,9 +10,16 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     private Slider slider;
 
+    [SerializeField]
+    private bool onceTimeCheck;
+
     public void onClickNewGame()
     {
-        GameManager.instance.NextScene();
+        if (!onceTimeCheck)
+        {
+            GameManager.instance.NextScene();
+            onceTimeCheck = true;
+        }
     }
 
     public void onClickExit()
