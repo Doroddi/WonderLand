@@ -69,7 +69,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: 7190470903801479881}
-    m_Duration: 11.366666666666667
+    m_Duration: 8.833333333333334
     m_TimeScale: 1
     m_ParentTrack: {fileID: -5322060749035127409}
     m_EaseInDuration: 0
@@ -135,7 +135,9 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Active
   m_Markers:
-    m_Objects: []
+    m_Objects:
+    - {fileID: -389999396901975105}
+    - {fileID: 5914617270810986958}
   m_PostPlaybackState: 3
 --- !u!114 &-3369210152102086998
 MonoBehaviour:
@@ -288,7 +290,7 @@ MonoBehaviour:
     m_Start: 5.966666666666667
     m_ClipIn: 0
     m_Asset: {fileID: -1256834135006588939}
-    m_Duration: 5.4
+    m_Duration: 2.866666666666667
     m_TimeScale: 1
     m_ParentTrack: {fileID: -1622687537164289123}
     m_EaseInDuration: 0
@@ -371,6 +373,22 @@ MonoBehaviour:
   VirtualCamera:
     exposedName: c9f535b16113b4545acde5f6783498f6
     defaultValue: {fileID: 0}
+--- !u!114 &-389999396901975105
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: 
+  m_Time: 8.833333333333334
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: 55ad46994041ab34b9161271e6645e30, type: 2}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -616,6 +634,22 @@ MonoBehaviour:
   m_OpenClipOffsetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_ApplyOffsets: 0
+--- !u!114 &5914617270810986958
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: 
+  m_Time: 8.816666666666666
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: 41a2defcf8cc1e942aa512de8c58237d, type: 2}
 --- !u!74 &6655966504726986474
 AnimationClip:
   m_ObjectHideFlags: 0

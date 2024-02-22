@@ -18,4 +18,12 @@ public class DialogEmitter : MonoBehaviour
             dialogManager.StartAsync(true);
         }   
     }
+
+    public void StartDialog () {
+        if(!isEmitted) {
+            dialogManager.AdaptDialogSystem(dialogSystem);
+            isEmitted = true;
+            dialogManager.StartAsync(true);
+        }   
+    }
 }

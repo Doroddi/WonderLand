@@ -19,8 +19,11 @@ EditorBuildSettings:
     guid: be034b708dba68644a2c911df918839e
   - enabled: 1
     path: Assets/Scenes/Episode.1/Scene_1_0.unity
-    guid: 8e37b5da082e46e44a03a80f3c7bdfca
+    guid: 9869dc6027eb5ab43aacb5951b9532e5
   - enabled: 1
     path: Assets/Scenes/Episode.1/WaterTank.unity
     guid: db6f1d5d8405fa7409555a7ad9ec16d9
+  - enabled: 1
+    path: Assets/Scenes/Episode.1/Scene_1_1.unity
+    guid: 8e37b5da082e46e44a03a80f3c7bdfca
   m_configObjects: {}

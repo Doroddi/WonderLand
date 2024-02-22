@@ -23,8 +23,7 @@ public class LeverPull : MonoBehaviour
     {
         startPoint = transform.position;
         startPosition = transform.position;
-        Debug.Log("x: " + startPoint.x);
-        Debug.Log("y: " + startPoint.y);
+
         MINY = startPosition.y - 1.0f;
         MAXY = startPosition.y;
     }
@@ -36,7 +35,6 @@ public class LeverPull : MonoBehaviour
         Vector3 newPosition = camera.ScreenToWorldPoint(Input.mousePosition);
         //Vector3 newPosition = camera.ScreenToWorldPoint(Input.mousePosition);
         newPosition.x = startPosition.x;
-        // Debug.Log(Input.mousePosition);
         newPosition.z = 0;
 
         
